@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IHA Restaurant — Where Nature Meets Taste | Fine Dining in Bengaluru</title>
+    <meta name="description"
+        content="IHA is an immersive dining experience inspired by nature, crafted with passion in Bengaluru. Discover our flame-cooked dishes, seasonal ingredients, and botanical architecture.">
+    <meta name="theme-color" content="#0d190f">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Custom Animated Pointer / Cursor Follower -->
+    <div id="customCursor" class="custom-cursor"></div>
+    <div id="cursorFollower" class="cursor-follower">
+        <span id="cursorText" class="cursor-text"></span>
+    </div>
+
+    <!-- Background Animated Floating Leaves Canvas -->
+    <canvas id="leafCanvas" class="leaf-canvas"></canvas>
+
+    <!-- Preloader Screen -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <img src="assets/images/logo.png" alt="IHA Restaurant Logo" class="preloader-logo-img">
+            <p class="brand-tagline">WHERE NATURE MEETS TASTE</p>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header" id="navbar">
+        <div class="header-container">
+            <a href="#home" class="logo-group" aria-label="IHA Restaurant Home Page">
+                <img src="assets/images/logo.png" alt="IHA Restaurant Logo" class="nav-logo-img">
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-cursor-text="HOME">HOME</a>
+                <a href="#our-story" class="nav-link" data-cursor-text="OUR STORY">OUR STORY</a>
+                <a href="#menu" class="nav-link" data-cursor-text="MENU">MENU</a>
+                <a href="#experience" class="nav-link" data-cursor-text="EXPERIENCE">EXPERIENCE</a>
+                <a href="#gallery" class="nav-link" data-cursor-text="GALLERY">GALLERY</a>
+                <a href="#contact" class="nav-link" data-cursor-text="CONTACT">CONTACT</a>
+            </nav>
+
+            <div class="header-actions">
+                <button type="button" class="btn btn-outline nav-cta" id="openReserveModalBtn"
+                    data-cursor-text="RESERVE">RESERVE A TABLE</button>
+                <button type="button" class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <div class="badge-tag">WELCOME TO IHA</div>
+                <h1 class="hero-title">Where Nature Meets<br><span class="title-accent">Taste</span></h1>
+                <p class="hero-subtitle">An immersive dining experience inspired by nature, crafted with passion.</p>
+
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary" data-cursor-text="EXPLORE">EXPLORE MENU <span
+                            class="arrow">&rarr;</span></a>
+                    <button type="button" class="btn btn-outline modal-trigger-btn" data-cursor-text="RESERVE">RESERVE A
+                        TABLE</button>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <a href="#our-story" class="scroll-link" aria-label="Scroll down to Our Story section">
+                    <span class="scroll-text">SCROLL TO DISCOVER</span>
+                    <span class="scroll-line"></span>
+                </a>
+            </div>
+
+            <!-- Stones &amp; Ferns Foreground Overlay Banner -->
+            <div class="stones-overlay-container">
+                <img src="assets/images/stones_border.png" alt="Nature River Stones &amp; Ferns Frame"
+                    class="stones-border-img">
+            </div>
+        </section>
+
+        <!-- Section 2: The IHA Experience / Our Story -->
+        <section id="our-story" class="story-section section-padding">
+            <div class="container grid grid-2-col align-center">
+                <div class="story-image-wrap reveal-left">
+                    <img src="assets/images/story_vase.png" alt="Artisanal Olive Vase Setting at IHA" class="story-img">
+                </div>
+                <div class="story-text-content reveal-right">
+                    <div class="section-tag">THE IHA EXPERIENCE</div>
+                    <h2 class="section-heading">A place to slow down, gather and enjoy.</h2>
+                    <p class="section-description">
+                        IHA is more than a restaurant. It is a space where natural surroundings, thoughtful design and
+                        carefully crafted food come together to create a memorable experience.
+                    </p>
+                    <a href="#experience" class="link-btn">DISCOVER OUR STORY <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Our Philosophy -->
+        <section class="philosophy-section">
+            <div class="philosophy-overlay"></div>
+            <div class="container philosophy-content text-center">
+                <div class="section-tag">OUR PHILOSOPHY</div>
+                <h2 class="philosophy-title">Simple ingredients. Honest flavours.<br>Meaningful moments.</h2>
+                <p class="philosophy-text">
+                    We believe great dining begins with quality ingredients, thoughtful preparation and an environment
+                    that makes every moment feel special.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4: Signatures Dishes Carousel -->
+        <section class="signatures-section section-padding">
+            <div class="container">
+                <div class="signatures-header">
+                    <div>
+                        <div class="section-tag">SIGNATURES</div>
+                        <h2 class="section-heading">A taste of what makes IHA special.</h2>
+                    </div>
+                    <p class="scroll-caption">Swipe or scroll horizontally to browse. Prices are indicative and may
+                        change.</p>
+                </div>
+
+                <div class="carousel-wrapper">
+                    <button type="button" class="carousel-control prev-btn" id="sigPrevBtn"
+                        aria-label="Previous signature item">&lsaquo;</button>
+                    <div class="signatures-carousel" id="sigCarousel">
+
+                        <!-- Card 1 -->
+                        <div class="signature-card" data-cursor-text="TASTE">
+                            <div class="card-img-holder">
+                                <img src="assets/images/dish_grill.png" alt="IHA Special Grill">
+                                <span class="card-badge">GRILLS</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title-row">
+                                    <h3 class="dish-name">IHA Special Grill</h3>
+                                    <span class="dish-price">₹780</span>
+                                </div>
+                                <p class="dish-desc">Char-grilled flavours prepared with our signature herbs and spices.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="signature-card" data-cursor-text="TASTE">
+                            <div class="card-img-holder">
+                                <img src="assets/images/dish_paneer.png" alt="Smoked Garden Paneer">
+                                <span class="card-badge veg-badge">🌱 VEGETARIAN</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title-row">
+                                    <h3 class="dish-name">Smoked Garden Paneer <span class="veg-icon">🌱</span></h3>
+                                    <span class="dish-price">₹520</span>
+                                </div>
+                                <p class="dish-desc">Clay-oven paneer with charred peppers and a cold coriander
+                                    emulsion.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="signature-card" data-cursor-text="TASTE">
+                            <div class="card-img-holder">
+                                <img src="assets/images/dish_curry.png" alt="Slow Clay-Pot Curry">
+                                <span class="card-badge">MAIN COURSE</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title-row">
+                                    <h3 class="dish-name">Slow Clay-Pot Curry</h3>
+                                    <span class="dish-price">₹640</span>
+                                </div>
+                                <p class="dish-desc">Simmered for hours in earthenware with hand-ground spices.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="signature-card" data-cursor-text="TASTE">
+                            <div class="card-img-holder">
+                                <img src="assets/images/dish_bowl.png" alt="Garden Harvest Bowl">
+                                <span class="card-badge veg-badge">🌱 STARTERS</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title-row">
+                                    <h3 class="dish-name">Garden Harvest Bowl <span class="veg-icon">🌱</span></h3>
+                                    <span class="dish-price">₹420</span>
+                                </div>
+                                <p class="dish-desc">Heirloom leaves, seeds and edible blossoms from local growers.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="signature-card" data-cursor-text="TASTE">
+                            <div class="card-img-holder">
+                                <img src="assets/images/dish_cake.png" alt="Warm Jaggery Cake">
+                                <span class="card-badge">DESSERTS</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title-row">
+                                    <h3 class="dish-name">Warm Jaggery Cake</h3>
+                                    <span class="dish-price">₹360</span>
+                                </div>
+                                <p class="dish-desc">Caramelised jaggery sponge, roasted nuts and slow-churned cream.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="signature-card" data-cursor-text="TASTE">
+                            <div class="card-img-holder">
+                                <img src="assets/images/dish_cooler.png" alt="Forest Cooler">
+                                <span class="card-badge">BEVERAGES</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title-row">
+                                    <h3 class="dish-name">Forest Cooler</h3>
+                                    <span class="dish-price">₹280</span>
+                                </div>
+                                <p class="dish-desc">Wild herbs, citrus and cold-brewed tea over hand-cut ice.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button type="button" class="carousel-control next-btn" id="sigNextBtn"
+                        aria-label="Next signature item">&rsaquo;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Our Menu with Category Tabs -->
+        <section id="menu" class="menu-section section-padding">
+            <div class="container">
+                <div class="text-center menu-header">
+                    <div class="section-tag">OUR MENU</div>
+                    <h2 class="section-heading">Cooked over flame, grown close to home.</h2>
+                </div>
+
+                <!-- Menu Category Navigation Tabs -->
+                <div class="menu-tabs-wrapper">
+                    <div class="menu-tabs" id="menuTabs">
+                        <button type="button" class="tab-btn active" data-category="starters"
+                            data-cursor-text="SELECT">STARTERS</button>
+                        <button type="button" class="tab-btn" data-category="soups"
+                            data-cursor-text="SELECT">SOUPS</button>
+                        <button type="button" class="tab-btn" data-category="main-course" data-cursor-text="SELECT">MAIN
+                            COURSE</button>
+                        <button type="button" class="tab-btn" data-category="grills"
+                            data-cursor-text="SELECT">GRILLS</button>
+                        <button type="button" class="tab-btn" data-category="vegetarian"
+                            data-cursor-text="SELECT">VEGETARIAN</button>
+                        <button type="button" class="tab-btn" data-category="non-vegetarian"
+                            data-cursor-text="SELECT">NON-VEGETARIAN</button>
+                        <button type="button" class="tab-btn" data-category="desserts"
+                            data-cursor-text="SELECT">DESSERTS</button>
+                        <button type="button" class="tab-btn" data-category="beverages"
+                            data-cursor-text="SELECT">BEVERAGES</button>
+                    </div>
+                </div>
+
+                <!-- Menu Items Container -->
+                <div class="menu-display-area">
+
+                    <!-- Category: STARTERS -->
+                    <div class="menu-category-panel active" id="cat-starters">
+                        <div class="category-header">
+                            <span class="cat-label">STARTERS</span>
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">IHA Special Paneer <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹480</span>
+                                </div>
+                                <p class="item-desc">Clay-oven paneer, smoked chilli, curry leaf</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Smoked Chicken</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹560</span>
+                                </div>
+                                <p class="item-desc">Slow-smoked, house pickle, burnt lime</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Garden Salad <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹420</span>
+                                </div>
+                                <p class="item-desc">Heirloom leaves, seeds, cold-pressed dressing</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Charred Corn Ribs <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹390</span>
+                                </div>
+                                <p class="item-desc">Toasted spice butter, aged cheese</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: SOUPS -->
+                    <div class="menu-category-panel" id="cat-soups">
+                        <div class="category-header">
+                            <span class="cat-label">SOUPS</span>
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Roasted Tomato &amp; Basil <span class="veg-icon">🌱</span>
+                                    </h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹290</span>
+                                </div>
+                                <p class="item-desc">Wood-roasted tomatoes, herb oil</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Forest Mushroom <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹320</span>
+                                </div>
+                                <p class="item-desc">Wild mushrooms, thyme, cream</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Clear Chicken Broth</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹310</span>
+                                </div>
+                                <p class="item-desc">Slow-simmered, ginger, spring onion</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: MAIN COURSE -->
+                    <div class="menu-category-panel" id="cat-main-course">
+                        <div class="category-header">
+                            <span class="cat-label">MAIN COURSE</span>
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Slow Clay-Pot Curry <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹640</span>
+                                </div>
+                                <p class="item-desc">Handground spices, earthenware simmered</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Seasonal Vegetable Korma <span class="veg-icon">🌱</span>
+                                    </h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹540</span>
+                                </div>
+                                <p class="item-desc">Cashew, saffron, garden vegetables</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Coastal Fish Curry</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹720</span>
+                                </div>
+                                <p class="item-desc">Coconut, tamarind, curry leaf</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Dal IHA <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹460</span>
+                                </div>
+                                <p class="item-desc">Overnight black lentils, smoked butter</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: GRILLS -->
+                    <div class="menu-category-panel" id="cat-grills">
+                        <div class="category-header">
+                            <span class="cat-label">GRILLS</span>
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">IHA Special Grill</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹780</span>
+                                </div>
+                                <p class="item-desc">Signature herbs, open-flame charred</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Herb Lamb Chops</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹900</span>
+                                </div>
+                                <p class="item-desc">Rosemary, garlic, charred onion</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Grilled Garden Platter <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹620</span>
+                                </div>
+                                <p class="item-desc">Seasonal vegetables, smoked salt</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: VEGETARIAN -->
+                    <div class="menu-category-panel" id="cat-vegetarian">
+                        <div class="category-header">
+                            <span class="cat-label">VEGETARIAN</span>
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Smoked Garden Paneer <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹520</span>
+                                </div>
+                                <p class="item-desc">Charred peppers, coriander emulsion</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Millet &amp; Root Pilaf <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹480</span>
+                                </div>
+                                <p class="item-desc">Toasted millet, seasonal roots, herbs</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Stone-Baked Flatbreads <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹180</span>
+                                </div>
+                                <p class="item-desc">Cultured butter, garden herbs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: NON-VEGETARIAN -->
+                    <div class="menu-category-panel" id="cat-non-vegetarian">
+                        <div class="category-header">
+                            <span class="cat-label">NON-VEGETARIAN</span>
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Charcoal Chicken</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹660</span>
+                                </div>
+                                <p class="item-desc">Yoghurt marinade, toasted spice</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Slow-Cooked Mutton</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹880</span>
+                                </div>
+                                <p class="item-desc">Twelve-hour braise, bone marrow</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">River Prawns</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹840</span>
+                                </div>
+                                <p class="item-desc">Butter, chilli, fresh lime</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: DESSERTS -->
+                    <div class="menu-category-panel" id="cat-desserts">
+                        <div class="category-header">
+                            <span class="cat-label">DESSERTS</span>
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Warm Jaggery Cake</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹360</span>
+                                </div>
+                                <p class="item-desc">Caramelised jaggery sponge, roasted nuts, slow-churned cream</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Coconut Elaneer Payasam <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹340</span>
+                                </div>
+                                <p class="item-desc">Tender coconut pulp, cardamom, toasted almonds</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Wild Fig &amp; Honey Gelato</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹290</span>
+                                </div>
+                                <p class="item-desc">House-churned gelato with local organic honey</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: BEVERAGES -->
+                    <div class="menu-category-panel" id="cat-beverages">
+                        <div class="category-header">
+                            <span class="cat-label">BEVERAGES</span>
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Forest Cooler <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹280</span>
+                                </div>
+                                <p class="item-desc">Wild herbs, citrus, cold-brew tea</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Estate Filter Coffee</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹220</span>
+                                </div>
+                                <p class="item-desc">Single-origin, slow brewed</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Tulsi &amp; Lemongrass Tea <span class="veg-icon">🌱</span>
+                                    </h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹200</span>
+                                </div>
+                                <p class="item-desc">Fresh leaves, garden grown</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center margin-top-large">
+                    <button type="button" class="btn btn-outline" id="openFullMenuBtn" data-cursor-text="EXPLORE">VIEW
+                        FULL MENU <span class="arrow">&rarr;</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Restaurant Space / Designed by Nature -->
+        <section id="experience" class="space-section section-padding">
+            <div class="container">
+                <div class="space-header">
+                    <div class="section-tag">RESTAURANT SPACE</div>
+                    <h2 class="section-heading">Designed by Nature</h2>
+                    <p class="section-subtitle">Every corner of IHA is designed to bring you closer to nature while
+                        keeping the experience refined and comfortable.</p>
+                </div>
+
+                <div class="space-masonry-grid">
+                    <div class="masonry-item item-large lightbox-trigger" data-img="assets/images/space_terrace.png"
+                        data-caption="Rooftop Outdoor Dining Terrace" data-cursor-text="VIEW">
+                        <img src="assets/images/space_terrace.png" alt="Terrace Dining">
+                        <div class="item-overlay">
+                            <span class="overlay-tag">TERRACE DINING</span>
+                        </div>
+                    </div>
+                    <div class="masonry-item lightbox-trigger" data-img="assets/images/space_greenwall.png"
+                        data-caption="Living Vertical Plant Wall &amp; Bar" data-cursor-text="VIEW">
+                        <img src="assets/images/space_greenwall.png" alt="Living Green Wall">
+                        <div class="item-overlay">
+                            <span class="overlay-tag">BOTANICAL INTERIORS</span>
+                        </div>
+                    </div>
+                    <div class="masonry-item lightbox-trigger" data-img="assets/images/space_entry.png"
+                        data-caption="Grand Wooden Entrance Doorway" data-cursor-text="VIEW">
+                        <img src="assets/images/space_entry.png" alt="Grand Entrance">
+                        <div class="item-overlay">
+                            <span class="overlay-tag">ENTRANCE ARCHITECTURE</span>
+                        </div>
+                    </div>
+                    <div class="masonry-item lightbox-trigger" data-img="assets/images/space_lamps.png"
+                        data-caption="Handwoven Rattan Pendant Lighting" data-cursor-text="VIEW">
+                        <img src="assets/images/space_lamps.png" alt="Rattan Pendant Lamps">
+                        <div class="item-overlay">
+                            <span class="overlay-tag">ARTISANAL LIGHTING</span>
+                        </div>
+                    </div>
+                    <div class="masonry-item lightbox-trigger" data-img="assets/images/story_vase.png"
+                        data-caption="Minimalist Artisanal Table Setting" data-cursor-text="VIEW">
+                        <img src="assets/images/story_vase.png" alt="Table Setting">
+                        <div class="item-overlay">
+                            <span class="overlay-tag">TABLE DETAILS</span>
+                        </div>
+                    </div>
+                    <div class="masonry-item lightbox-trigger" data-img="assets/images/dish_grill.png"
+                        data-caption="Flame-Charred Culinary Creations" data-cursor-text="VIEW">
+                        <img src="assets/images/dish_grill.png" alt="Flame Charred Dishes">
+                        <div class="item-overlay">
+                            <span class="overlay-tag">CULINARY ART</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Three ways to spend an evening -->
+        <section class="ways-section section-padding">
+            <div class="container">
+                <div class="text-center margin-bottom-large">
+                    <div class="section-tag">THE IHA EXPERIENCE</div>
+                    <h2 class="section-heading">Three ways to spend an evening with us.</h2>
+                </div>
+
+                <div class="grid grid-3-col">
+                    <!-- Card 1 -->
+                    <div class="way-card" data-cursor-text="DISCOVER">
+                        <div class="way-img-wrap">
+                            <img src="assets/images/space_terrace.png" alt="Dine at IHA">
+                        </div>
+                        <div class="way-body">
+                            <h3 class="way-title">DINE</h3>
+                            <p class="way-desc">Thoughtfully designed spaces for memorable meals.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="way-card" data-cursor-text="DISCOVER">
+                        <div class="way-img-wrap">
+                            <img src="assets/images/space_lamps.png" alt="Gather at IHA">
+                        </div>
+                        <div class="way-body">
+                            <h3 class="way-title">GATHER</h3>
+                            <p class="way-desc">A warm environment for friends, families and celebrations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="way-card" data-cursor-text="DISCOVER">
+                        <div class="way-img-wrap">
+                            <img src="assets/images/space_entry.png" alt="Connect at IHA">
+                        </div>
+                        <div class="way-body">
+                            <h3 class="way-title">CONNECT</h3>
+                            <p class="way-desc">Nature, food and people coming together.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Moments from the Everyday (Filterable Gallery) -->
+        <section id="gallery" class="gallery-section section-padding">
+            <div class="container">
+                <div class="gallery-header">
+                    <div>
+                        <div class="section-tag">A GLIMPSE OF IHA</div>
+                        <h2 class="section-heading">Moments from the everyday.</h2>
+                    </div>
+
+                    <!-- Gallery Filter Buttons -->
+                    <div class="gallery-filter-tabs" id="galleryFilterTabs">
+                        <button type="button" class="g-tab-btn active" data-filter="all"
+                            data-cursor-text="FILTER">ALL</button>
+                        <button type="button" class="g-tab-btn" data-filter="food"
+                            data-cursor-text="FILTER">FOOD</button>
+                        <button type="button" class="g-tab-btn" data-filter="interiors"
+                            data-cursor-text="FILTER">INTERIORS</button>
+                        <button type="button" class="g-tab-btn" data-filter="nature"
+                            data-cursor-text="FILTER">NATURE</button>
+                        <button type="button" class="g-tab-btn" data-filter="people"
+                            data-cursor-text="FILTER">PEOPLE</button>
+                        <button type="button" class="g-tab-btn" data-filter="events"
+                            data-cursor-text="FILTER">EVENTS</button>
+                    </div>
+                </div>
+
+                <div class="gallery-grid" id="galleryGrid">
+                    <div class="gallery-card g-item food" data-img="assets/images/dish_grill.png"
+                        data-caption="IHA Signature Grill Platter" data-cursor-text="VIEW">
+                        <img src="assets/images/dish_grill.png" alt="Food Dish">
+                        <div class="g-hover"><span class="view-btn">VIEW</span></div>
+                    </div>
+                    <div class="gallery-card g-item interiors" data-img="assets/images/space_greenwall.png"
+                        data-caption="Botanical Greenery Interior Wall" data-cursor-text="VIEW">
+                        <img src="assets/images/space_greenwall.png" alt="Interior View">
+                        <div class="g-hover"><span class="view-btn">VIEW</span></div>
+                    </div>
+                    <div class="gallery-card g-item nature" data-img="assets/images/space_entry.png"
+                        data-caption="Lantern Illuminated Stone Entrance" data-cursor-text="VIEW">
+                        <img src="assets/images/space_entry.png" alt="Nature Pathway">
+                        <div class="g-hover"><span class="view-btn">VIEW</span></div>
+                    </div>
+                    <div class="gallery-card g-item food" data-img="assets/images/dish_curry.png"
+                        data-caption="Clay Pot Slow Cooked Curry" data-cursor-text="VIEW">
+                        <img src="assets/images/dish_curry.png" alt="Clay Pot Curry">
+                        <div class="g-hover"><span class="view-btn">VIEW</span></div>
+                    </div>
+                    <div class="gallery-card g-item interiors" data-img="assets/images/space_lamps.png"
+                        data-caption="Handcrafted Woven Basket Lights" data-cursor-text="VIEW">
+                        <img src="assets/images/space_lamps.png" alt="Lamps">
+                        <div class="g-hover"><span class="view-btn">VIEW</span></div>
+                    </div>
+                    <div class="gallery-card g-item food" data-img="assets/images/dish_cake.png"
+                        data-caption="Warm Jaggery Cake &amp; Vanilla Cream" data-cursor-text="VIEW">
+                        <img src="assets/images/dish_cake.png" alt="Dessert Cake">
+                        <div class="g-hover"><span class="view-btn">VIEW</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Celebrate at IHA -->
+        <section class="celebrate-section section-padding">
+            <div class="container grid grid-2-col align-center">
+                <div class="celebrate-left">
+                    <div class="section-tag">CELEBRATE AT IHA</div>
+                    <h2 class="section-heading">Occasions that deserve an unhurried evening.</h2>
+                    <p class="section-description">
+                        From intimate gatherings to special celebrations, IHA offers an atmosphere designed for
+                        memorable occasions.
+                    </p>
+                    <button type="button" class="btn btn-primary" id="openEventModalBtn" data-cursor-text="PLAN">PLAN
+                        YOUR EVENT <span class="arrow">&rarr;</span></button>
+                </div>
+
+                <div class="celebrate-right">
+                    <div class="occasion-list">
+                        <div class="occasion-item" data-cursor-text="PLAN">
+                            <span class="occ-number">01</span>
+                            <div class="occ-info">
+                                <h3 class="occ-title">Birthday</h3>
+                                <p class="occ-desc">Warm, unhurried celebrations under lantern light.</p>
+                            </div>
+                        </div>
+                        <div class="occasion-item" data-cursor-text="PLAN">
+                            <span class="occ-number">02</span>
+                            <div class="occ-info">
+                                <h3 class="occ-title">Anniversary</h3>
+                                <p class="occ-desc">Quiet corners set for two, with a garden view.</p>
+                            </div>
+                        </div>
+                        <div class="occasion-item" data-cursor-text="PLAN">
+                            <span class="occ-number">03</span>
+                            <div class="occ-info">
+                                <h3 class="occ-title">Corporate Dinner</h3>
+                                <p class="occ-desc">Considered menus and private seating for teams.</p>
+                            </div>
+                        </div>
+                        <div class="occasion-item" data-cursor-text="PLAN">
+                            <span class="occ-number">04</span>
+                            <div class="occ-info">
+                                <h3 class="occ-title">Family Gathering</h3>
+                                <p class="occ-desc">Long communal tables made for sharing.</p>
+                            </div>
+                        </div>
+                        <div class="occasion-item" data-cursor-text="PLAN">
+                            <span class="occ-number">05</span>
+                            <div class="occ-info">
+                                <h3 class="occ-title">Private Events</h3>
+                                <p class="occ-desc">The whole space, shaped around your occasion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: What Our Guests Say (Testimonials) -->
+        <section class="testimonials-section section-padding">
+            <div class="container">
+                <div class="testimonials-header">
+                    <div class="section-tag">WHAT OUR GUESTS SAY</div>
+                    <h2 class="section-heading">In their words.</h2>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="quote-text">“We arrived for dinner and forgot the city existed. The greenery, the
+                            light, the quiet – it stays with you.”</p>
+                        <div class="reviewer-meta">
+                            <span class="reviewer-tag">GUEST REVIEW</span>
+                            <span class="reviewer-type">Dinner for two</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="quote-text">“The grill is exceptional, but what surprised me was the restraint. Every
+                            dish tastes like the ingredient itself.”</p>
+                        <div class="reviewer-meta">
+                            <span class="reviewer-tag">GUEST REVIEW</span>
+                            <span class="reviewer-type">Weekend lunch</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="quote-text">“We hosted twenty people for an anniversary. The team shaped the evening
+                            around us without ever hovering.”</p>
+                        <div class="reviewer-meta">
+                            <span class="reviewer-tag">GUEST REVIEW</span>
+                            <span class="reviewer-type">Private celebration</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="quote-text">“Wooden beams, stone underfoot, plants everywhere. It feels less like a
+                            restaurant and more like a place to breathe.”</p>
+                        <div class="reviewer-meta">
+                            <span class="reviewer-tag">GUEST REVIEW</span>
+                            <span class="reviewer-type">First visit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: Reservation Form -->
+        <section id="reservation" class="reservation-section section-padding">
+            <div class="container">
+                <div class="reservation-box grid grid-2-col align-center">
+                    <div class="res-info-side">
+                        <div class="section-tag">RESERVATION</div>
+                        <h2 class="section-heading">Your table awaits</h2>
+                        <p class="section-description">
+                            Share a few details and our team will confirm availability with you directly.
+                        </p>
+                    </div>
+
+                    <div class="res-form-side">
+                        <form id="inlineReservationForm" class="reservation-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="resName">NAME</label>
+                                    <input type="text" id="resName" name="name" required placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="resPhone">PHONE</label>
+                                    <input type="tel" id="resPhone" name="phone" required placeholder="+91 98450 00000"
+                                        pattern="[\+]?[0-9\s\-]{8,20}">
+                                </div>
+                                <div class="form-group span-2">
+                                    <label for="resEmail">EMAIL</label>
+                                    <input type="email" id="resEmail" name="email" required placeholder="you@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="resDate">DATE</label>
+                                    <input type="date" id="resDate" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="resTime">TIME</label>
+                                    <select id="resTime" name="time" required>
+                                        <option value="">Select time</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">01:00 PM</option>
+                                        <option value="14:00">02:00 PM</option>
+                                        <option value="19:00">07:00 PM</option>
+                                        <option value="20:00">08:00 PM</option>
+                                        <option value="21:00">09:00 PM</option>
+                                        <option value="22:00">10:00 PM</option>
+                                    </select>
+                                </div>
+                                <div class="form-group span-2">
+                                    <label for="resGuests">NUMBER OF GUESTS</label>
+                                    <select id="resGuests" name="guests" required>
+                                        <option value="1">1 Guest</option>
+                                        <option value="2" selected>2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                        <option value="5">5 Guests</option>
+                                        <option value="6+">6+ Guests (Group)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group span-2">
+                                    <label for="resRequests">SPECIAL REQUEST</label>
+                                    <textarea id="resRequests" name="special_request" rows="2"
+                                        placeholder="Occasion, seating preference, dietary notes"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full margin-top-med"
+                                data-cursor-text="SUBMIT">RESERVE YOUR TABLE <span class="arrow">&rarr;</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 12: Find Us / Contact &amp; Location -->
+        <section id="contact" class="find-us-section section-padding">
+            <div class="container grid grid-2-col">
+                <div class="find-info">
+                    <div class="section-tag">FIND US</div>
+                    <h2 class="section-heading">IHA Restaurant</h2>
+
+                    <div class="info-block">
+                        <span class="block-label">ADDRESS</span>
+                        <p class="block-val">Outer Ring Road, 2nd Stage, Nagarabhavi<br>Bengaluru, Karnataka 560091</p>
+                    </div>
+
+                    <div class="info-block">
+                        <span class="block-label">OPENING HOURS</span>
+                        <div class="hours-list">
+                            <p><span>Monday – Thursday</span> <span>12:00 – 23:00</span></p>
+                            <p><span>Friday – Saturday</span> <span>12:00 – 00:00</span></p>
+                            <p><span>Sunday</span> <span>11:00 – 23:00</span></p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <span class="block-label">CONTACT</span>
+                        <p class="block-val"><a href="tel:+919845000000">+91&nbsp;98450&nbsp;00000</a></p>
+                        <p class="block-val"><a href="mailto:hello@iharestaurant.com">hello@iharestaurant.com</a></p>
+                    </div>
+
+                    <a href="https://maps.google.com" target="_blank" rel="noopener"
+                        class="btn btn-outline margin-top-med" data-cursor-text="MAP">GET DIRECTIONS <span
+                            class="arrow">→</span></a>
+                </div>
+
+                <!-- Google Maps Embedded iFrame Container -->
+                <div class="map-widget-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31529.159075453987!2d77.23115927910158!3d8.958794500000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b042b5e1f203e4d%3A0x90e6faccdc0595da!2sIHA%20Restaurant!5e0!3m2!1sen!2sin!4v1787685853716!5m2!1sen!2sin"
+                        allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                        title="IHA Restaurant Google Map Location"></iframe>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Pre-Footer Banner -->
+        <section class="banner-section">
+            <div class="container text-center">
+                <div class="section-tag">CONTACT</div>
+                <h2 class="banner-title">Come experience IHA.</h2>
+                <div class="banner-contact-row">
+                    <span><a href="tel:+919845000000"><span
+                                class="icon">📞</span>&nbsp;+91&nbsp;98450&nbsp;00000</a></span>
+                    <span><a href="mailto:hello@iharestaurant.com"><span
+                                class="icon">✉️</span>&nbsp;hello@iharestaurant.com</a></span>
+                    <span><span class="icon">🕒</span>&nbsp;Open Daily from 12:00 PM</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand">
+                <a href="#home" class="footer-logo-link" aria-label="IHA Restaurant Home">
+                    <img src="assets/images/logo.png" alt="IHA Restaurant Logo" class="footer-logo-img">
+                </a>
+                <p class="footer-tagline">Where nature meets taste.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram" data-cursor-text="IG">IG</a>
+                    <a href="#" aria-label="Facebook" data-cursor-text="FB">FB</a>
+                    <a href="#" aria-label="WhatsApp" data-cursor-text="WA">WA</a>
+                    <a href="#" aria-label="Tripadvisor" data-cursor-text="TA">TA</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">EXPLORE</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#our-story">Our Story</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">HOURS</h4>
+                <ul class="footer-text-list">
+                    <li>Monday – Thursday: 12:00 – 23:00</li>
+                    <li>Friday – Saturday: 12:00 – 00:00</li>
+                    <li>Sunday: 11:00 – 23:00</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">CONTACT</h4>
+                <p class="footer-text">Outer Ring Road, 2nd Stage, Nagarabhavi<br>Bengaluru, Karnataka 560091</p>
+                <p class="footer-text margin-top-small"><a href="tel:+919845000000">+91&nbsp;98450&nbsp;00000</a></p>
+                <p class="footer-text"><a href="mailto:hello@iharestaurant.com">hello@iharestaurant.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>© 2026 IHA Restaurant. All rights reserved.</p>
+            <a href="#home" class="back-to-top" data-cursor-text="TOP">BACK TO TOP ↑</a>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+
+    <!-- Modal 1: Table Reservation Modal -->
+    <div class="modal" id="reservationModal">
+        <div class="modal-backdrop" id="closeReserveModalBg"></div>
+        <div class="modal-dialog">
+            <button type="button" class="modal-close-btn" id="closeReserveModalBtn"
+                aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <div class="section-tag">RESERVATION</div>
+                <h3 class="modal-title">Book Your Experience</h3>
+            </div>
+            <form id="modalReservationForm" class="reservation-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="mResName">NAME</label>
+                        <input type="text" id="mResName" name="name" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="mResPhone">PHONE</label>
+                        <input type="tel" id="mResPhone" name="phone" required placeholder="+91 98450 00000"
+                            pattern="[\+]?[0-9\s\-]{8,20}">
+                    </div>
+                    <div class="form-group span-2">
+                        <label for="mResEmail">EMAIL</label>
+                        <input type="email" id="mResEmail" name="email" required placeholder="you@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="mResDate">DATE</label>
+                        <input type="date" id="mResDate" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mResTime">TIME</label>
+                        <select id="mResTime" name="time" required>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="13:00">01:00 PM</option>
+                            <option value="19:00">07:00 PM</option>
+                            <option value="20:00">08:00 PM</option>
+                            <option value="21:00">09:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group span-2">
+                        <label for="mResGuests">GUESTS</label>
+                        <select id="mResGuests" name="guests" required>
+                            <option value="2">2 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="6">6+ Guests</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full margin-top-med" data-cursor-text="CONFIRM">CONFIRM
+                    RESERVATION <span class="arrow">&rarr;</span></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: Event Planning Modal -->
+    <div class="modal" id="eventModal">
+        <div class="modal-backdrop" id="closeEventModalBg"></div>
+        <div class="modal-dialog">
+            <button type="button" class="modal-close-btn" id="closeEventModalBtn"
+                aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <div class="section-tag">CELEBRATE AT IHA</div>
+                <h3 class="modal-title">Plan Your Event</h3>
+            </div>
+            <form id="eventForm" class="reservation-form">
+                <div class="form-grid">
+                    <div class="form-group span-2">
+                        <label for="evtName">NAME</label>
+                        <input type="text" id="evtName" name="name" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="evtPhone">PHONE</label>
+                        <input type="tel" id="evtPhone" name="phone" required placeholder="+91 98450 00000"
+                            pattern="[\+]?[0-9\s\-]{8,20}">
+                    </div>
+                    <div class="form-group">
+                        <label for="evtDate">EVENT DATE</label>
+                        <input type="date" id="evtDate" name="date" required>
+                    </div>
+                    <div class="form-group span-2">
+                        <label for="evtType">EVENT TYPE</label>
+                        <select id="evtType" name="event_type" required>
+                            <option value="Birthday">Birthday</option>
+                            <option value="Anniversary">Anniversary</option>
+                            <option value="Corporate">Corporate Dinner</option>
+                            <option value="Family">Family Gathering</option>
+                            <option value="Private">Private Event</option>
+                        </select>
+                    </div>
+                    <div class="form-group span-2">
+                        <label for="evtDetails">ESTIMATED GUESTS &amp; DETAILS</label>
+                        <textarea id="evtDetails" name="details" rows="3"
+                            placeholder="Tell us about your event vision..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full margin-top-med" data-cursor-text="SUBMIT">SUBMIT
+                    INQUIRY <span class="arrow">&rarr;</span></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightboxModal">
+        <div class="lightbox-backdrop" id="closeLightboxBg"></div>
+        <div class="lightbox-content">
+            <button type="button" class="lightbox-close" id="closeLightboxBtn"
+                aria-label="Close lightbox">&times;</button>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+                alt="IHA Gallery Preview" id="lightboxImg">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="toast-notification">
+        <span class="toast-icon">✓</span>
+        <span class="toast-text" id="toastText">Reservation request submitted successfully!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
