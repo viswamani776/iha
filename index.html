@@ -25,9 +25,10 @@
 
 <body>
 
-    <!-- Custom Animated Pointer / Cursor Follower -->
+    <!-- Custom Animated Pointer / Real Botanical Leaf Cursor Follower -->
     <div id="customCursor" class="custom-cursor"></div>
-    <div id="cursorFollower" class="cursor-follower">
+    <div id="cursorFollower" class="cursor-follower" aria-hidden="true">
+        <img src="assets/images/cursor_leaf.png" alt="Natural Leaf Cursor" class="cursor-real-leaf">
         <span id="cursorText" class="cursor-text"></span>
     </div>
 
@@ -99,11 +100,6 @@
                 </a>
             </div>
 
-            <!-- Stones &amp; Ferns Foreground Overlay Banner -->
-            <div class="stones-overlay-container">
-                <img src="assets/images/stones_border.png" alt="Nature River Stones &amp; Ferns Frame"
-                    class="stones-border-img">
-            </div>
         </section>
 
         <!-- Section 2: The IHA Experience / Our Story -->
@@ -154,96 +150,103 @@
                         aria-label="Previous signature item">&lsaquo;</button>
                     <div class="signatures-carousel" id="sigCarousel">
 
-                        <!-- Card 1 -->
+                        <!-- Card 1: Arabian Charcoal Grill -->
                         <div class="signature-card" data-cursor-text="TASTE">
                             <div class="card-img-holder">
-                                <img src="assets/images/dish_grill.png" alt="IHA Special Grill">
-                                <span class="card-badge">GRILLS</span>
+                                <img src="assets/images/04_grilled_chicken.avif" alt="Arabian Charcoal Grilled Chicken">
+                                <span class="card-badge">ARABIAN GRILL</span>
                             </div>
                             <div class="card-body">
                                 <div class="card-title-row">
-                                    <h3 class="dish-name">IHA Special Grill</h3>
-                                    <span class="dish-price">₹780</span>
+                                    <h3 class="dish-name">Arabian Charcoal Grill</h3>
+                                    <span class="dish-price">From ₹140</span>
                                 </div>
-                                <p class="dish-desc">Char-grilled flavours prepared with our signature herbs and spices.
+                                <p class="dish-desc">Charcoal-grilled chicken marinated in authentic Arabic herbs,
+                                    served with garlic dip.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Card 2 -->
+                        <!-- Card 2: Authentic Shawarma -->
                         <div class="signature-card" data-cursor-text="TASTE">
                             <div class="card-img-holder">
-                                <img src="assets/images/dish_paneer.png" alt="Smoked Garden Paneer">
+                                <img src="assets/images/06_shawarma.avif" alt="Authentic Arabian Shawarma Roll">
+                                <span class="card-badge">HOUSE SPECIAL</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title-row">
+                                    <h3 class="dish-name">Arabian Shawarma</h3>
+                                    <span class="dish-price">₹90</span>
+                                </div>
+                                <p class="dish-desc">Succulent shredded slow-roasted chicken rolled with our signature
+                                    garlic mayonnaise in warm flatbread.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Dragon Chicken -->
+                        <div class="signature-card" data-cursor-text="TASTE">
+                            <div class="card-img-holder">
+                                <img src="assets/images/01_dragon_chicken.avif" alt="Crispy Dragon Chicken">
+                                <span class="card-badge">STARTER SPECIAL</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-title-row">
+                                    <h3 class="dish-name">Dragon Chicken</h3>
+                                    <span class="dish-price">₹220</span>
+                                </div>
+                                <p class="dish-desc">Crispy fried chicken tossed with cashews, crunchy bell peppers,
+                                    and a spicy tangy wok sauce.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Paneer Butter Masala -->
+                        <div class="signature-card" data-cursor-text="TASTE">
+                            <div class="card-img-holder">
+                                <img src="assets/images/05_paneer_butter_masala.avif" alt="Paneer Butter Masala">
                                 <span class="card-badge veg-badge">🌱 VEGETARIAN</span>
                             </div>
                             <div class="card-body">
                                 <div class="card-title-row">
-                                    <h3 class="dish-name">Smoked Garden Paneer <span class="veg-icon">🌱</span></h3>
-                                    <span class="dish-price">₹520</span>
+                                    <h3 class="dish-name">Paneer Butter Masala <span class="veg-icon">🌱</span></h3>
+                                    <span class="dish-price">₹190</span>
                                 </div>
-                                <p class="dish-desc">Clay-oven paneer with charred peppers and a cold coriander
-                                    emulsion.</p>
+                                <p class="dish-desc">Cottage cheese simmered in a rich, buttery tomato-cashew cream
+                                    gravy
+                                    with aromatic spices.</p>
                             </div>
                         </div>
 
-                        <!-- Card 3 -->
+                        <!-- Card 5: Live Charcoal BBQ -->
                         <div class="signature-card" data-cursor-text="TASTE">
                             <div class="card-img-holder">
-                                <img src="assets/images/dish_curry.png" alt="Slow Clay-Pot Curry">
-                                <span class="card-badge">MAIN COURSE</span>
+                                <img src="assets/images/03_grill_cooking.avif" alt="Live Charcoal Barbecue Cooking">
+                                <span class="card-badge">CHEF'S GRILL</span>
                             </div>
                             <div class="card-body">
                                 <div class="card-title-row">
-                                    <h3 class="dish-name">Slow Clay-Pot Curry</h3>
-                                    <span class="dish-price">₹640</span>
+                                    <h3 class="dish-name">Live Charcoal BBQ</h3>
+                                    <span class="dish-price">From ₹140</span>
                                 </div>
-                                <p class="dish-desc">Simmered for hours in earthenware with hand-ground spices.</p>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="signature-card" data-cursor-text="TASTE">
-                            <div class="card-img-holder">
-                                <img src="assets/images/dish_bowl.png" alt="Garden Harvest Bowl">
-                                <span class="card-badge veg-badge">🌱 STARTERS</span>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title-row">
-                                    <h3 class="dish-name">Garden Harvest Bowl <span class="veg-icon">🌱</span></h3>
-                                    <span class="dish-price">₹420</span>
-                                </div>
-                                <p class="dish-desc">Heirloom leaves, seeds and edible blossoms from local growers.</p>
-                            </div>
-                        </div>
-
-                        <!-- Card 5 -->
-                        <div class="signature-card" data-cursor-text="TASTE">
-                            <div class="card-img-holder">
-                                <img src="assets/images/dish_cake.png" alt="Warm Jaggery Cake">
-                                <span class="card-badge">DESSERTS</span>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title-row">
-                                    <h3 class="dish-name">Warm Jaggery Cake</h3>
-                                    <span class="dish-price">₹360</span>
-                                </div>
-                                <p class="dish-desc">Caramelised jaggery sponge, roasted nuts and slow-churned cream.
+                                <p class="dish-desc">Slow flame-grilled on red-hot coals with authentic herbs,
+                                    delivering
+                                    an irresistible smoky finish.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Card 6 -->
+                        <!-- Card 6: Royal Falooda & Sundae -->
                         <div class="signature-card" data-cursor-text="TASTE">
                             <div class="card-img-holder">
-                                <img src="assets/images/dish_cooler.png" alt="Forest Cooler">
-                                <span class="card-badge">BEVERAGES</span>
+                                <img src="assets/images/02_falooda.avif" alt="Royal Falooda and Gourmet Ice Cream">
+                                <span class="card-badge">DESSERTS</span>
                             </div>
                             <div class="card-body">
                                 <div class="card-title-row">
-                                    <h3 class="dish-name">Forest Cooler</h3>
-                                    <span class="dish-price">₹280</span>
+                                    <h3 class="dish-name">Royal Falooda</h3>
+                                    <span class="dish-price">₹120</span>
                                 </div>
-                                <p class="dish-desc">Wild herbs, citrus and cold-brewed tea over hand-cut ice.</p>
+                                <p class="dish-desc">Layered dessert with basil seeds, chilled rose milk, vermicelli,
+                                    crisp dry nuts, and creamy ice cream.</p>
                             </div>
                         </div>
 
@@ -262,310 +265,1462 @@
                     <h2 class="section-heading">Cooked over flame, grown close to home.</h2>
                 </div>
 
+                <!-- Menu Top Notice Strip (Halal, Shawarma highlight) -->
+                <div class="menu-notice-bar">
+                    <div class="notice-pill-group">
+                        <span class="notice-pill halal-pill">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                            100% HALAL CERTIFIED
+                        </span>
+                        <span class="notice-pill shawarma-pill">
+                            🌯 SHAWARMA SPECIAL — ₹90
+                        </span>
+                        <span class="notice-pill">
+                            🍨 ALL FRESH JUICE &amp; ICE CREAM AVAILABLE
+                        </span>
+                    </div>
+                </div>
+
                 <!-- Menu Category Navigation Tabs -->
                 <div class="menu-tabs-wrapper">
                     <div class="menu-tabs" id="menuTabs">
-                        <button type="button" class="tab-btn active" data-category="starters"
+                        <button type="button" class="tab-btn active" data-category="biriyani"
+                            data-cursor-text="SELECT">BIRIYANI</button>
+                        <button type="button" class="tab-btn" data-category="starters"
                             data-cursor-text="SELECT">STARTERS</button>
-                        <button type="button" class="tab-btn" data-category="soups"
-                            data-cursor-text="SELECT">SOUPS</button>
                         <button type="button" class="tab-btn" data-category="main-course" data-cursor-text="SELECT">MAIN
                             COURSE</button>
-                        <button type="button" class="tab-btn" data-category="grills"
-                            data-cursor-text="SELECT">GRILLS</button>
-                        <button type="button" class="tab-btn" data-category="vegetarian"
-                            data-cursor-text="SELECT">VEGETARIAN</button>
-                        <button type="button" class="tab-btn" data-category="non-vegetarian"
-                            data-cursor-text="SELECT">NON-VEGETARIAN</button>
-                        <button type="button" class="tab-btn" data-category="desserts"
-                            data-cursor-text="SELECT">DESSERTS</button>
+                        <button type="button" class="tab-btn" data-category="arabian-grill"
+                            data-cursor-text="SELECT">ARABIAN GRILL</button>
+                        <button type="button" class="tab-btn" data-category="chinese"
+                            data-cursor-text="SELECT">CHINESE</button>
+                        <button type="button" class="tab-btn" data-category="breads-dinner"
+                            data-cursor-text="SELECT">BREADS &amp; DINNER</button>
+                        <button type="button" class="tab-btn" data-category="soups"
+                            data-cursor-text="SELECT">SOUPS</button>
+                        <button type="button" class="tab-btn" data-category="lunch-meals"
+                            data-cursor-text="SELECT">LUNCH MEALS</button>
+                        <button type="button" class="tab-btn" data-category="quick-bites"
+                            data-cursor-text="SELECT">QUICK BITES</button>
                         <button type="button" class="tab-btn" data-category="beverages"
-                            data-cursor-text="SELECT">BEVERAGES</button>
+                            data-cursor-text="SELECT">BEVERAGES &amp; ICE CREAM</button>
                     </div>
                 </div>
 
                 <!-- Menu Items Container -->
                 <div class="menu-display-area">
 
-                    <!-- Category: STARTERS -->
-                    <div class="menu-category-panel active" id="cat-starters">
+                    <!-- Category 1: BIRIYANI -->
+                    <div class="menu-category-panel active" id="cat-biriyani">
                         <div class="category-header">
-                            <span class="cat-label">STARTERS</span>
+                            <span class="cat-label">BIRIYANI SPECIALS</span>
                         </div>
                         <div class="menu-grid">
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">IHA Special Paneer <span class="veg-icon">🌱</span></h4>
+                                    <h4 class="item-title">Chicken Biriyani</h4>
                                     <div class="item-line"></div>
-                                    <span class="item-price">₹480</span>
+                                    <span class="item-price">₹200</span>
                                 </div>
-                                <p class="item-desc">Clay-oven paneer, smoked chilli, curry leaf</p>
+                                <p class="item-desc">Aromatic long-grain rice slow-cooked with tender chicken
+                                    and
+                                    authentic spices</p>
                             </div>
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">Smoked Chicken</h4>
+                                    <h4 class="item-title">Chicken 65 Biriyani</h4>
                                     <div class="item-line"></div>
-                                    <span class="item-price">₹560</span>
+                                    <span class="item-price">₹240</span>
                                 </div>
-                                <p class="item-desc">Slow-smoked, house pickle, burnt lime</p>
+                                <p class="item-desc">Fragrant dum biriyani topped with spicy, crunchy fried
+                                    chicken 65
+                                </p>
                             </div>
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">Garden Salad <span class="veg-icon">🌱</span></h4>
+                                    <h4 class="item-title">Mutton Biriyani</h4>
                                     <div class="item-line"></div>
-                                    <span class="item-price">₹420</span>
+                                    <span class="item-price">₹300</span>
                                 </div>
-                                <p class="item-desc">Heirloom leaves, seeds, cold-pressed dressing</p>
+                                <p class="item-desc">Rich dum-cooked biriyani with succulent bone-in tender
+                                    mutton
+                                    chunks</p>
                             </div>
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">Charred Corn Ribs <span class="veg-icon">🌱</span></h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹390</span>
-                                </div>
-                                <p class="item-desc">Toasted spice butter, aged cheese</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category: SOUPS -->
-                    <div class="menu-category-panel" id="cat-soups">
-                        <div class="category-header">
-                            <span class="cat-label">SOUPS</span>
-                        </div>
-                        <div class="menu-grid">
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Roasted Tomato &amp; Basil <span class="veg-icon">🌱</span>
-                                    </h4>
+                                    <h4 class="item-title">Prawn 65 Biriyani</h4>
                                     <div class="item-line"></div>
                                     <span class="item-price">₹290</span>
                                 </div>
-                                <p class="item-desc">Wood-roasted tomatoes, herb oil</p>
+                                <p class="item-desc">Aromatic biriyani rice served with crispy spiced golden
+                                    prawns</p>
                             </div>
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">Forest Mushroom <span class="veg-icon">🌱</span></h4>
+                                    <h4 class="item-title">Kaadai Biriyani</h4>
                                     <div class="item-line"></div>
-                                    <span class="item-price">₹320</span>
+                                    <span class="item-price">₹230</span>
                                 </div>
-                                <p class="item-desc">Wild mushrooms, thyme, cream</p>
+                                <p class="item-desc">Country-style quail (kaadai) dum biriyani infused with
+                                    rustic herbs
+                                </p>
                             </div>
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">Clear Chicken Broth</h4>
+                                    <h4 class="item-title">Hyderabaadi Biriyani</h4>
                                     <div class="item-line"></div>
-                                    <span class="item-price">₹310</span>
+                                    <span class="item-price">₹270</span>
                                 </div>
-                                <p class="item-desc">Slow-simmered, ginger, spring onion</p>
+                                <p class="item-desc">Royal kacchi dum recipe with aromatic saffron, fried onions
+                                    &amp;
+                                    herbs</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Plain Biriyani (Kuska)</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹150</span>
+                                </div>
+                                <p class="item-desc">Flavor-packed kuska biriyani rice cooked in aromatic broth
+                                </p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Egg Biriyani</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹170</span>
+                                </div>
+                                <p class="item-desc">Spiced aromatic biriyani rice served with golden-seared
+                                    boiled eggs
+                                </p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: MAIN COURSE -->
+                    <!-- Category 2: STARTERS -->
+                    <div class="menu-category-panel" id="cat-starters">
+                        <div class="category-header">
+                            <span class="cat-label">STARTERS</span>
+                        </div>
+
+                        <!-- Subgroup: Vegetarian Starters -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Vegetarian Starters</h3>
+                                <span class="subgroup-badge badge-veg">🌱 VEG</span>
+                            </div>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Green Salad <span class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹80</span>
+                                    </div>
+                                    <p class="item-desc">Fresh garden cucumbers, tomatoes, carrots, onion and
+                                        lemon
+                                        wedges</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Gobi 65 <span class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹130</span>
+                                    </div>
+                                    <p class="item-desc">Crisp-fried cauliflower florets seasoned with curry
+                                        leaves and
+                                        green chilli</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Mushroom 65 <span class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹170</span>
+                                    </div>
+                                    <p class="item-desc">Golden button mushrooms marinated in aromatic
+                                        south-Indian
+                                        spiced batter</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Paneer 65 <span class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹170</span>
+                                    </div>
+                                    <p class="item-desc">Soft cottage cheese cubes tossed in spicy pepper 65
+                                        masala</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Veg Crispy <span class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹160</span>
+                                    </div>
+                                    <p class="item-desc">Assorted crunch-fried garden vegetables tossed in
+                                        sweet-and-spicy glaze</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">BabyCorn Pepper Salt <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹170</span>
+                                    </div>
+                                    <p class="item-desc">Tender baby corn wok-tossed with freshly crushed pepper
+                                        and sea
+                                        salt</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Golden Baby Corn <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹170</span>
+                                    </div>
+                                    <p class="item-desc">Batter-fried golden baby corn with crisp crust served
+                                        with
+                                        tangy dip</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Paneer Tikka <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹180</span>
+                                    </div>
+                                    <p class="item-desc">Clay-oven char-grilled paneer cubes marinated in spiced
+                                        yoghurt
+                                        &amp; mustard oil</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Mushroom Tikka <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹180</span>
+                                    </div>
+                                    <p class="item-desc">Tandoor-roasted whole button mushrooms glazed with
+                                        aromatic
+                                        herbs</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Subgroup: Non-Vegetarian Starters -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Non-Vegetarian Starters</h3>
+                                <span class="subgroup-badge badge-nonveg">🍗 NON-VEG</span>
+                            </div>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Seasonal Fish Fry</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">Seasonal / MRP</span>
+                                    </div>
+                                    <p class="item-desc">Catch of the day shallow-fried in authentic coastal
+                                        village
+                                        masala</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Nethili Fry</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹200</span>
+                                    </div>
+                                    <p class="item-desc">Crispy anchovies marinated in spicy coastal red chilli
+                                        masala
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Kaadai Fry</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹100</span>
+                                    </div>
+                                    <p class="item-desc">Whole quail roasted crisp with pepper, garlic and
+                                        country
+                                        spices</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Prawn 65</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹220</span>
+                                    </div>
+                                    <p class="item-desc">Succulent fresh prawns crisp-fried with fiery 65 masala
+                                        &amp;
+                                        curry leaves</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Boneless</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹190</span>
+                                    </div>
+                                    <p class="item-desc">Tender boneless chicken bites fried with crushed black
+                                        pepper
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Lollypop (5 pcs)</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹200</span>
+                                    </div>
+                                    <p class="item-desc">Crispy chicken winglets served with hot garlic dipping
+                                        sauce
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chilli Garlic Chicken</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹220</span>
+                                    </div>
+                                    <p class="item-desc">Wok-tossed chicken chunks in rich roasted garlic, soy
+                                        and fresh
+                                        chillies</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Ginger Chicken</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹220</span>
+                                    </div>
+                                    <p class="item-desc">Chicken bites sauteed with julienned fresh ginger,
+                                        scallions
+                                        and spices</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Honey Chicken</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹220</span>
+                                    </div>
+                                    <p class="item-desc">Crispy chicken tossed in sweet-spicy honey glaze with
+                                        sesame
+                                        seeds</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Dragon Chicken</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹220</span>
+                                    </div>
+                                    <p class="item-desc">Crispy chicken strips tossed in fiery red paste and
+                                        roasted
+                                        cashews</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Tikka</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹230</span>
+                                    </div>
+                                    <p class="item-desc">Boneless chicken chunks marinated in hung curd and
+                                        baked in
+                                        tandoor</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Mutton Gola</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹250</span>
+                                    </div>
+                                    <p class="item-desc">Mouthwatering spiced minced mutton meatballs
+                                        pan-roasted to
+                                        perfection</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: MAIN COURSE -->
                     <div class="menu-category-panel" id="cat-main-course">
                         <div class="category-header">
                             <span class="cat-label">MAIN COURSE</span>
                         </div>
-                        <div class="menu-grid">
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Slow Clay-Pot Curry <span class="veg-icon">🌱</span></h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹640</span>
-                                </div>
-                                <p class="item-desc">Handground spices, earthenware simmered</p>
+
+                        <!-- Subgroup: Non-Vegetarian Gravies -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Non-Vegetarian Gravies</h3>
+                                <span class="subgroup-badge badge-nonveg">🍗 NON-VEG</span>
                             </div>
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Seasonal Vegetable Korma <span class="veg-icon">🌱</span>
-                                    </h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹540</span>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Mutton Chukka</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹280</span>
+                                    </div>
+                                    <p class="item-desc">Slow-roasted mutton in caramelized shallots, dry spices
+                                        and
+                                        fresh curry leaves</p>
                                 </div>
-                                <p class="item-desc">Cashew, saffron, garden vegetables</p>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chettinad Chicken</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹230</span>
+                                    </div>
+                                    <p class="item-desc">Traditional curry made with freshly ground whole
+                                        Chettinad
+                                        spices &amp; pepper</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Pepper Masala</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹230</span>
+                                    </div>
+                                    <p class="item-desc">Thick spiced chicken gravy loaded with crushed black
+                                        peppercorns</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Kadai Chicken</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹220</span>
+                                    </div>
+                                    <p class="item-desc">Chicken cooked with crunchy capsicum and pounded whole
+                                        coriander in tomato gravy</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Butter Chicken</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹230</span>
+                                    </div>
+                                    <p class="item-desc">Tender tandoor chicken pieces simmered in silky buttery
+                                        tomato
+                                        cashew sauce</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chilli Chicken Gravy</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹230</span>
+                                    </div>
+                                    <p class="item-desc">Classic Indo-Chinese chicken in rich soy-garlic spicy
+                                        gravy</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Manchurian</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹230</span>
+                                    </div>
+                                    <p class="item-desc">Fried chicken dumplings tossed in savory ginger-garlic
+                                        Manchurian sauce</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Afghani Creamy Chicken</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹230</span>
+                                    </div>
+                                    <p class="item-desc">Mild, velvety chicken prepared with fresh cream, cashew
+                                        paste
+                                        and green cardamom</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Solthan</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹230</span>
+                                    </div>
+                                    <p class="item-desc">Chef's royal special chicken slow-simmered in rich
+                                        fragrant
+                                        spiced gravy</p>
+                                </div>
                             </div>
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Coastal Fish Curry</h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹720</span>
-                                </div>
-                                <p class="item-desc">Coconut, tamarind, curry leaf</p>
+                        </div>
+
+                        <!-- Subgroup: Sea Foods -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Sea Foods</h3>
+                                <span class="subgroup-badge badge-seafood">🦐 SEA FOOD</span>
                             </div>
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Dal IHA <span class="veg-icon">🌱</span></h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹460</span>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Nethili Kuzhambu</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹220</span>
+                                    </div>
+                                    <p class="item-desc">Tangy, spicy country-style anchovy fish curry simmered
+                                        with
+                                        tamarind &amp; garlic</p>
                                 </div>
-                                <p class="item-desc">Overnight black lentils, smoked butter</p>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Viral Meen Kulambu</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹290</span>
+                                    </div>
+                                    <p class="item-desc">Murrel freshwater fish cooked in authentic fiery
+                                        tamarind
+                                        village curry</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Ayirai Meen Kulambu</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹290</span>
+                                    </div>
+                                    <p class="item-desc">Traditional clay-pot delicacy cooked with delicate
+                                        river loach
+                                        fish</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Sankara Meen</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹250</span>
+                                    </div>
+                                    <p class="item-desc">Red snapper fish simmered in flavorful coastal red
+                                        curry</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Prawn Masala</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹250</span>
+                                    </div>
+                                    <p class="item-desc">Plump prawns cooked in thick onion, tomato and roasted
+                                        spice
+                                        gravy</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Nandu Masala</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹290</span>
+                                    </div>
+                                    <p class="item-desc">Fresh sea crab cooked in rich black pepper, shallots
+                                        and
+                                        coconut masala</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Kannava Thokku</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹250</span>
+                                    </div>
+                                    <p class="item-desc">Tender squid (calamari) cooked in roasted spicy shallot
+                                        and
+                                        curry leaf reduction</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Subgroup: Vegetarian Gravies -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Vegetarian Gravies</h3>
+                                <span class="subgroup-badge badge-veg">🌱 VEG</span>
+                            </div>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Mix Veg <span class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹160</span>
+                                    </div>
+                                    <p class="item-desc">Medley of fresh vegetables simmered in home-style
+                                        spiced curry
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Aloo Gobi <span class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹160</span>
+                                    </div>
+                                    <p class="item-desc">Potatoes and cauliflower florets sauteed with cumin,
+                                        ginger and
+                                        turmeric</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Mushroom Masala <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹190</span>
+                                    </div>
+                                    <p class="item-desc">Button mushrooms cooked in a flavorful semi-dry onion
+                                        and
+                                        tomato masala</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Paneer Butter Masala <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹190</span>
+                                    </div>
+                                    <p class="item-desc">Cottage cheese cubes bathed in rich creamy buttery
+                                        tomato gravy
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Paneer Tikka Masala <span class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹210</span>
+                                    </div>
+                                    <p class="item-desc">Tandoor-charred paneer simmered in robust spiced gravy
+                                        with
+                                        bell peppers</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Veg Kadai <span class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹170</span>
+                                    </div>
+                                    <p class="item-desc">Fresh garden vegetables cooked with capsicum and
+                                        crushed kadai
+                                        spices</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Kadai Paneer <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹190</span>
+                                    </div>
+                                    <p class="item-desc">Paneer cubes tossed with roasted bell peppers in
+                                        fragrant kadai
+                                        sauce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Subgroup: Naan & Rotti -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Naan &amp; Tandoori Rotti</h3>
+                                <span class="subgroup-badge badge-special">🫓 TANDOOR</span>
+                            </div>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Naan</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹50</span>
+                                    </div>
+                                    <p class="item-desc">Classic soft and fluffy leavened clay-oven flatbread
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Butter Naan</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹60</span>
+                                    </div>
+                                    <p class="item-desc">Hot clay-oven naan generously brushed with pure melted
+                                        butter
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Garlic Naan</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹80</span>
+                                    </div>
+                                    <p class="item-desc">Tandoor naan loaded with roasted minced garlic and
+                                        fresh
+                                        coriander</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Tandoori Rotti</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹60</span>
+                                    </div>
+                                    <p class="item-desc">Wholesome whole-wheat flatbread freshly baked in clay
+                                        tandoor
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Butter Rotti</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹70</span>
+                                    </div>
+                                    <p class="item-desc">Crispy whole wheat tandoori rotti brushed with melting
+                                        butter
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: GRILLS -->
-                    <div class="menu-category-panel" id="cat-grills">
+                    <!-- Category 4: ARABIAN GRILL & SHAWARMA -->
+                    <div class="menu-category-panel" id="cat-arabian-grill">
                         <div class="category-header">
-                            <span class="cat-label">GRILLS</span>
+                            <span class="cat-label">ARABIAN GRILL &amp; SHAWARMA</span>
                         </div>
                         <div class="menu-grid">
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">IHA Special Grill</h4>
+                                    <h4 class="item-title">Shawarma</h4>
                                     <div class="item-line"></div>
-                                    <span class="item-price">₹780</span>
+                                    <span class="item-price">₹90</span>
                                 </div>
-                                <p class="item-desc">Signature herbs, open-flame charred</p>
+                                <p class="item-desc">Slow-roasted rotisserie chicken sliced thin, wrapped in
+                                    soft bread
+                                    with garlic mayo</p>
                             </div>
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">Herb Lamb Chops</h4>
+                                    <h4 class="item-title">Grill Chicken</h4>
                                     <div class="item-line"></div>
-                                    <span class="item-price">₹900</span>
+                                    <div class="price-options">
+                                        <span class="price-chip"><small>QTR</small>₹140</span>
+                                        <span class="price-chip"><small>HALF</small>₹250</span>
+                                        <span class="price-chip"><small>FULL</small>₹450</span>
+                                    </div>
                                 </div>
-                                <p class="item-desc">Rosemary, garlic, charred onion</p>
+                                <p class="item-desc">Authentic Arabian charcoal-grilled chicken with exotic
+                                    spice rub
+                                    and creamy garlic dip</p>
                             </div>
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">Grilled Garden Platter <span class="veg-icon">🌱</span></h4>
+                                    <h4 class="item-title">Tandoori Chicken</h4>
                                     <div class="item-line"></div>
-                                    <span class="item-price">₹620</span>
+                                    <div class="price-options">
+                                        <span class="price-chip"><small>QTR</small>₹140</span>
+                                        <span class="price-chip"><small>HALF</small>₹250</span>
+                                        <span class="price-chip"><small>FULL</small>₹450</span>
+                                    </div>
                                 </div>
-                                <p class="item-desc">Seasonal vegetables, smoked salt</p>
+                                <p class="item-desc">Clay-oven roasted chicken marinated in spiced yogurt,
+                                    Kashmiri
+                                    chili and lemon</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">BBQ Chicken</h4>
+                                    <div class="item-line"></div>
+                                    <div class="price-options">
+                                        <span class="price-chip"><small>QTR</small>₹140</span>
+                                        <span class="price-chip"><small>HALF</small>₹250</span>
+                                        <span class="price-chip"><small>FULL</small>₹450</span>
+                                    </div>
+                                </div>
+                                <p class="item-desc">Charcoal-grilled juicy chicken glazed in our smoky
+                                    sweet-savory
+                                    barbecue reduction</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Extra Mayonnaise</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹25</span>
+                                </div>
+                                <p class="item-desc">Freshly whipped rich garlic mayonnaise</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: VEGETARIAN -->
-                    <div class="menu-category-panel" id="cat-vegetarian">
+                    <!-- Category 5: CHINESE -->
+                    <div class="menu-category-panel" id="cat-chinese">
                         <div class="category-header">
-                            <span class="cat-label">VEGETARIAN</span>
+                            <span class="cat-label">CHINESE (FRIED RICE &amp; NOODLES)</span>
                         </div>
-                        <div class="menu-grid">
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Smoked Garden Paneer <span class="veg-icon">🌱</span></h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹520</span>
-                                </div>
-                                <p class="item-desc">Charred peppers, coriander emulsion</p>
+
+                        <!-- Subgroup: Chinese Non-Veg -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Non-Vegetarian (Rice / Noodles)</h3>
+                                <span class="subgroup-badge badge-nonveg">🍗 NON-VEG</span>
                             </div>
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Millet &amp; Root Pilaf <span class="veg-icon">🌱</span></h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹480</span>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Egg Fried Rice / Noodles</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹150</span>
+                                    </div>
+                                    <p class="item-desc">Wok-tossed rice or noodles with fluffy scrambled eggs
+                                        and
+                                        spring onions</p>
                                 </div>
-                                <p class="item-desc">Toasted millet, seasonal roots, herbs</p>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Fried Rice / Noodles</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹170</span>
+                                    </div>
+                                    <p class="item-desc">Aromatic wok rice or noodles tossed with tender spiced
+                                        chicken
+                                        shreds</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Prawn Fried Rice / Noodles</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹220</span>
+                                    </div>
+                                    <p class="item-desc">Fresh juicy prawns wok-charred with vegetables and
+                                        savory
+                                        seasoning</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Schezwan Egg Fried Rice / Noodles</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹170</span>
+                                    </div>
+                                    <p class="item-desc">Spicy Sichuan pepper paste tossed with scrambled eggs
+                                        and
+                                        greens</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Schezwan Chicken Fried Rice / Noodles</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹180</span>
+                                    </div>
+                                    <p class="item-desc">Fiery Schezwan chili paste wok-fried with seasoned
+                                        chicken
+                                        pieces</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Schezwan Prawn Fried Rice / Noodles</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹230</span>
+                                    </div>
+                                    <p class="item-desc">Prawns and vegetables tossed in red-hot Sichuan chili
+                                        garlic
+                                        glaze</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Shanghai Fried Rice / Noodles (Non-Veg)</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹220</span>
+                                    </div>
+                                    <p class="item-desc">Sweet and spicy Shanghai style with chicken, eggs and
+                                        crispy
+                                        vegetables</p>
+                                </div>
                             </div>
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Stone-Baked Flatbreads <span class="veg-icon">🌱</span></h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹180</span>
+                        </div>
+
+                        <!-- Subgroup: Chinese Veg -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Vegetarian (Rice / Noodles)</h3>
+                                <span class="subgroup-badge badge-veg">🌱 VEG</span>
+                            </div>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Veg Fried Rice / Noodles <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹140</span>
+                                    </div>
+                                    <p class="item-desc">Classic wok-tossed long-grain rice or hakka noodles
+                                        with crisp
+                                        garden veggies</p>
                                 </div>
-                                <p class="item-desc">Cultured butter, garden herbs</p>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Schezwan Fried Rice / Noodles <span
+                                                class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹150</span>
+                                    </div>
+                                    <p class="item-desc">Spicy red Schezwan chili paste tossed with fresh
+                                        vegetables</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Paneer Fried Rice / Noodles <span
+                                                class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹170</span>
+                                    </div>
+                                    <p class="item-desc">Golden paneer cubes tossed with vegetables and light
+                                        soy
+                                        seasoning</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Mushroom Fried Rice / Noodles <span
+                                                class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹170</span>
+                                    </div>
+                                    <p class="item-desc">Fresh sliced button mushrooms and greens wok-tossed
+                                        with rice
+                                        or noodles</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Schezwan Paneer Fried Rice / Noodles <span
+                                                class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹190</span>
+                                    </div>
+                                    <p class="item-desc">Spicy Sichuan sauce wok-tossed with soft cottage cheese
+                                        and
+                                        veggies</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Schezwan Mushroom Fried Rice / Noodles <span
+                                                class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹190</span>
+                                    </div>
+                                    <p class="item-desc">Mushrooms wok-fried in spicy garlic Schezwan chili
+                                        paste</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Mixed Fried Rice / Noodles <span
+                                                class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹190</span>
+                                    </div>
+                                    <p class="item-desc">Loaded with paneer, mushrooms, baby corn and fresh
+                                        greens</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Shanghai Fried Rice / Noodles (Veg) <span
+                                                class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹190</span>
+                                    </div>
+                                    <p class="item-desc">Shanghai style sweet-and-spicy wok rice or noodles with
+                                        assorted veggies</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: NON-VEGETARIAN -->
-                    <div class="menu-category-panel" id="cat-non-vegetarian">
+                    <!-- Category 6: BREADS & DINNER -->
+                    <div class="menu-category-panel" id="cat-breads-dinner">
                         <div class="category-header">
-                            <span class="cat-label">NON-VEGETARIAN</span>
+                            <span class="cat-label">BREADS, DOSA &amp; EGG SPECIALS</span>
                         </div>
-                        <div class="menu-grid">
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Charcoal Chicken</h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹660</span>
-                                </div>
-                                <p class="item-desc">Yoghurt marinade, toasted spice</p>
+
+                        <!-- Subgroup: Breads & Parotta -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Breads &amp; Parotta</h3>
+                                <span class="subgroup-badge badge-special">🫓 PAROTTA</span>
                             </div>
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Slow-Cooked Mutton</h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹880</span>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Parotta</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹15</span>
+                                    </div>
+                                    <p class="item-desc">Golden, crispy, multi-layered flaky South Indian
+                                        parotta</p>
                                 </div>
-                                <p class="item-desc">Twelve-hour braise, bone marrow</p>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chapathi</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹20</span>
+                                    </div>
+                                    <p class="item-desc">Soft and healthy griddle-cooked whole-wheat flatbread
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Wheat Parotta</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹30</span>
+                                    </div>
+                                    <p class="item-desc">Layered whole-wheat flaky parotta cooked golden on tawa
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Coin Parotta</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹40</span>
+                                    </div>
+                                    <p class="item-desc">Bite-sized, cute crispy flaky mini parottas</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Nool Parotta</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹50</span>
+                                    </div>
+                                    <p class="item-desc">Fine string-like layered thread parotta, soft inside
+                                        and crisp
+                                        outside</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Egg Kothu Parotta</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹90</span>
+                                    </div>
+                                    <p class="item-desc">Shredded parotta minced on iron griddle with spiced
+                                        eggs,
+                                        onions and salna</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Kothu Parotta</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹160</span>
+                                    </div>
+                                    <p class="item-desc">Flaky parotta beaten on tawa with shredded chicken
+                                        curry, meat
+                                        chunks &amp; eggs</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Egg Ceylon Parotta</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹90</span>
+                                    </div>
+                                    <p class="item-desc">Square-folded envelope parotta stuffed with spiced egg
+                                        and
+                                        onion filling</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Ceylon Parotta</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹180</span>
+                                    </div>
+                                    <p class="item-desc">Crisp thin Ceylon parotta parcel packed with spiced
+                                        minced
+                                        chicken &amp; egg</p>
+                                </div>
                             </div>
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">River Prawns</h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹840</span>
+                        </div>
+
+                        <!-- Subgroup: Dinner Dosa -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Dinner &amp; Dosa Specials</h3>
+                                <span class="subgroup-badge badge-special">🥞 DOSA</span>
+                            </div>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Kal Dosa <span class="veg-icon">🌱</span></h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹30</span>
+                                    </div>
+                                    <p class="item-desc">Soft, spongy traditional thick griddle pancake cooked
+                                        with ghee
+                                    </p>
                                 </div>
-                                <p class="item-desc">Butter, chilli, fresh lime</p>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Egg Dosa</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹70</span>
+                                    </div>
+                                    <p class="item-desc">Golden crisp rice crepe layered with a spiced beaten
+                                        farm egg
+                                        and pepper</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Kari Dosa</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹220</span>
+                                    </div>
+                                    <p class="item-desc">Madurai style spongy kal dosa topped with egg and rich
+                                        spicy
+                                        chicken gravy</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Mutton Kari Dosa</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹280</span>
+                                    </div>
+                                    <p class="item-desc">Signature specialty: thick kal dosa loaded with eggs
+                                        and tender
+                                        mutton chukka</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Subgroup: Egg Specials -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Egg Specials</h3>
+                                <span class="subgroup-badge badge-special">🍳 EGGS</span>
+                            </div>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Boiled Egg</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹20</span>
+                                    </div>
+                                    <p class="item-desc">Fresh farm-boiled egg seasoned with black pepper and
+                                        salt</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Half Boil</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹20</span>
+                                    </div>
+                                    <p class="item-desc">Sunny-side up fried egg with a rich runny golden yolk
+                                    </p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Omelette</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹20</span>
+                                    </div>
+                                    <p class="item-desc">Fluffy beaten eggs with chopped onions, green chilies
+                                        and
+                                        spices</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">White Omelette</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹40</span>
+                                    </div>
+                                    <p class="item-desc">Healthy egg-white omelette cooked with light herbs and
+                                        black
+                                        pepper</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Podimas</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹50</span>
+                                    </div>
+                                    <p class="item-desc">South-Indian spiced egg scramble with curry leaves,
+                                        onions and
+                                        green chillies</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Kalakki</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹25</span>
+                                    </div>
+                                    <p class="item-desc">Classic soft-centered semi-cooked pocket egg cooked on
+                                        sizzling
+                                        hot griddle</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: DESSERTS -->
-                    <div class="menu-category-panel" id="cat-desserts">
+                    <!-- Category 7: SOUPS -->
+                    <div class="menu-category-panel" id="cat-soups">
                         <div class="category-header">
-                            <span class="cat-label">DESSERTS</span>
+                            <span class="cat-label">HOT SOUPS</span>
                         </div>
-                        <div class="menu-grid">
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Warm Jaggery Cake</h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹360</span>
-                                </div>
-                                <p class="item-desc">Caramelised jaggery sponge, roasted nuts, slow-churned cream</p>
+
+                        <!-- Subgroup: Veg Soup -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Vegetarian Soups</h3>
+                                <span class="subgroup-badge badge-veg">🌱 VEG</span>
                             </div>
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Coconut Elaneer Payasam <span class="veg-icon">🌱</span></h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹340</span>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Sweet Corn Soup <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹60</span>
+                                    </div>
+                                    <p class="item-desc">Smooth sweet corn broth with tender kernels and fresh
+                                        vegetables</p>
                                 </div>
-                                <p class="item-desc">Tender coconut pulp, cardamom, toasted almonds</p>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Cream Of Tomato Soup <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹60</span>
+                                    </div>
+                                    <p class="item-desc">Velvety rich soup made from vine-ripened tomatoes,
+                                        fresh butter
+                                        and cream</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Veg Clear Soup <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹50</span>
+                                    </div>
+                                    <p class="item-desc">Light, healthy consomme with finely shredded fresh
+                                        garden
+                                        vegetables</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Hot &amp; Sour Veg Soup <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹60</span>
+                                    </div>
+                                    <p class="item-desc">Spicy and tangy Chinese broth packed with mushrooms,
+                                        carrots
+                                        and pepper</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Veg Manchow Soup <span class="veg-icon">🌱</span>
+                                        </h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹60</span>
+                                    </div>
+                                    <p class="item-desc">Robust dark vegetable broth flavored with garlic,
+                                        served with
+                                        crispy fried noodles</p>
+                                </div>
                             </div>
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Wild Fig &amp; Honey Gelato</h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹290</span>
+                        </div>
+
+                        <!-- Subgroup: Non Veg Soup -->
+                        <div class="menu-subgroup">
+                            <div class="subgroup-header">
+                                <h3 class="subgroup-title">Non-Vegetarian Soups</h3>
+                                <span class="subgroup-badge badge-nonveg">🍗 NON-VEG</span>
+                            </div>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Clear Soup</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹70</span>
+                                    </div>
+                                    <p class="item-desc">Slow-simmered soothing chicken broth with fresh herbs,
+                                        ginger
+                                        and pepper</p>
                                 </div>
-                                <p class="item-desc">House-churned gelato with local organic honey</p>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Hot &amp; Sour Chicken Soup</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹80</span>
+                                    </div>
+                                    <p class="item-desc">Fiery and sour soup with shredded chicken, eggs, soy
+                                        and white
+                                        pepper</p>
+                                </div>
+                                <div class="menu-item">
+                                    <div class="item-head">
+                                        <h4 class="item-title">Chicken Manchow Soup</h4>
+                                        <div class="item-line"></div>
+                                        <span class="item-price">₹80</span>
+                                    </div>
+                                    <p class="item-desc">Spicy garlic chicken soup topped with crunchy fried
+                                        noodle
+                                        ribbons</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: BEVERAGES -->
-                    <div class="menu-category-panel" id="cat-beverages">
+                    <!-- Category 8: LUNCH MEALS -->
+                    <div class="menu-category-panel" id="cat-lunch-meals">
                         <div class="category-header">
-                            <span class="cat-label">BEVERAGES</span>
+                            <span class="cat-label">TRADITIONAL BANANA LEAF LUNCH MEALS</span>
                         </div>
                         <div class="menu-grid">
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">Forest Cooler <span class="veg-icon">🌱</span></h4>
+                                    <h4 class="item-title">Veg Meals <span class="veg-icon">🌱</span></h4>
                                     <div class="item-line"></div>
-                                    <span class="item-price">₹280</span>
+                                    <span class="item-price">₹130</span>
                                 </div>
-                                <p class="item-desc">Wild herbs, citrus, cold-brew tea</p>
+                                <p class="item-desc">Steamed rice, aromatic sambar, rasam, kootu, poriyal, mor
+                                    kulambu,
+                                    appalam, curd and pickle</p>
                             </div>
                             <div class="menu-item">
                                 <div class="item-head">
-                                    <h4 class="item-title">Estate Filter Coffee</h4>
-                                    <div class="item-line"></div>
-                                    <span class="item-price">₹220</span>
-                                </div>
-                                <p class="item-desc">Single-origin, slow brewed</p>
-                            </div>
-                            <div class="menu-item">
-                                <div class="item-head">
-                                    <h4 class="item-title">Tulsi &amp; Lemongrass Tea <span class="veg-icon">🌱</span>
-                                    </h4>
+                                    <h4 class="item-title">Fish Meals</h4>
                                     <div class="item-line"></div>
                                     <span class="item-price">₹200</span>
                                 </div>
-                                <p class="item-desc">Fresh leaves, garden grown</p>
+                                <p class="item-desc">Full meals served with authentic spicy fish kulambu and
+                                    delicious
+                                    village-style gravies</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Chicken Meals</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹220</span>
+                                </div>
+                                <p class="item-desc">Full lunch meals served with authentic rich chicken curry,
+                                    non-veg
+                                    gravies &amp; sides</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Mutton Meals</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹280</span>
+                                </div>
+                                <p class="item-desc">Royal meals accompanied by slow-cooked rich mutton curry
+                                    and
+                                    traditional accompaniments</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 9: QUICK BITES -->
+                    <div class="menu-category-panel" id="cat-quick-bites">
+                        <div class="category-header">
+                            <span class="cat-label">QUICK BITES &amp; SNACKS</span>
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Fish Finger</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹250</span>
+                                </div>
+                                <p class="item-desc">Golden breaded crumb-fried fish fillets served with tart
+                                    dipping
+                                    sauce</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Crab Lollipop</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹230</span>
+                                </div>
+                                <p class="item-desc">Succulent crab meat seasoned, crumbed and deep-fried crisp
+                                    on
+                                    sticks</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Chicken Nuggets</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹130</span>
+                                </div>
+                                <p class="item-desc">Crispy golden tender chicken nuggets served with spiced
+                                    mayo</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Veg Nuggets <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹70</span>
+                                </div>
+                                <p class="item-desc">Crunchy breaded vegetable and potato bites served piping
+                                    hot</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">French Fries <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹60</span>
+                                </div>
+                                <p class="item-desc">Classic crisp salted potato fries</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Chicken Popcorn</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹90</span>
+                                </div>
+                                <p class="item-desc">Bite-sized crunchy seasoned fried chicken poppers</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Chicken Wings</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹90</span>
+                                </div>
+                                <p class="item-desc">Crispy fried chicken wings with savory herb coating</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Chicken Sandwich</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹120</span>
+                                </div>
+                                <p class="item-desc">Toasted bread filled with shredded chicken, lettuce, herbs
+                                    and
+                                    creamy mayo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 10: BEVERAGES & ICE CREAM -->
+                    <div class="menu-category-panel" id="cat-beverages">
+                        <div class="category-header">
+                            <span class="cat-label">BEVERAGES &amp; ICE CREAMS</span>
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Fresh Fruit Juices <span class="veg-icon">🌱</span>
+                                    </h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">Fresh / MRP</span>
+                                </div>
+                                <p class="item-desc">Freshly pressed seasonal juices — Orange, Watermelon,
+                                    Apple, Lime
+                                    &amp; Pomegranate</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Natural Elaneer Coolers <span class="veg-icon">🌱</span></h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹80</span>
+                                </div>
+                                <p class="item-desc">Refreshing natural tender coconut water and chilled
+                                    botanical
+                                    cooler blends</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">All Ice Creams Available <span class="veg-icon">🌱</span>
+                                    </h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">From ₹60</span>
+                                </div>
+                                <p class="item-desc">Scoops of Vanilla, Chocolate, Butterscotch, Strawberry
+                                    &amp; Mango
+                                    ice creams</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-head">
+                                    <h4 class="item-title">Special Sundaes &amp; Falooda</h4>
+                                    <div class="item-line"></div>
+                                    <span class="item-price">₹120</span>
+                                </div>
+                                <p class="item-desc">Chilled falooda with vermicelli, rose syrup, sweet basil
+                                    seeds and
+                                    rich ice cream</p>
                             </div>
                         </div>
                     </div>
@@ -625,9 +1780,9 @@
                             <span class="overlay-tag">TABLE DETAILS</span>
                         </div>
                     </div>
-                    <div class="masonry-item lightbox-trigger" data-img="assets/images/dish_grill.png"
-                        data-caption="Flame-Charred Culinary Creations" data-cursor-text="VIEW">
-                        <img src="assets/images/dish_grill.png" alt="Flame Charred Dishes">
+                    <div class="masonry-item lightbox-trigger" data-img="assets/images/03_grill_cooking.avif"
+                        data-caption="Live Charcoal Flame-Charred Grill" data-cursor-text="VIEW">
+                        <img src="assets/images/03_grill_cooking.avif" alt="Live Charcoal Flame-Charred Grill">
                         <div class="item-overlay">
                             <span class="overlay-tag">CULINARY ART</span>
                         </div>
@@ -708,9 +1863,14 @@
                 </div>
 
                 <div class="gallery-grid" id="galleryGrid">
-                    <div class="gallery-card g-item food" data-img="assets/images/dish_grill.png"
-                        data-caption="IHA Signature Grill Platter" data-cursor-text="VIEW">
-                        <img src="assets/images/dish_grill.png" alt="Food Dish">
+                    <div class="gallery-card g-item food" data-img="assets/images/04_grilled_chicken.avif"
+                        data-caption="Arabian Charcoal Grill Chicken" data-cursor-text="VIEW">
+                        <img src="assets/images/04_grilled_chicken.avif" alt="Arabian Charcoal Grill Chicken">
+                        <div class="g-hover"><span class="view-btn">VIEW</span></div>
+                    </div>
+                    <div class="gallery-card g-item food" data-img="assets/images/06_shawarma.avif"
+                        data-caption="Authentic Arabian Shawarma Roll" data-cursor-text="VIEW">
+                        <img src="assets/images/06_shawarma.avif" alt="Arabian Shawarma">
                         <div class="g-hover"><span class="view-btn">VIEW</span></div>
                     </div>
                     <div class="gallery-card g-item interiors" data-img="assets/images/space_greenwall.png"
@@ -718,14 +1878,14 @@
                         <img src="assets/images/space_greenwall.png" alt="Interior View">
                         <div class="g-hover"><span class="view-btn">VIEW</span></div>
                     </div>
-                    <div class="gallery-card g-item nature" data-img="assets/images/space_entry.png"
-                        data-caption="Lantern Illuminated Stone Entrance" data-cursor-text="VIEW">
-                        <img src="assets/images/space_entry.png" alt="Nature Pathway">
+                    <div class="gallery-card g-item food" data-img="assets/images/01_dragon_chicken.avif"
+                        data-caption="Crispy Tossed Dragon Chicken" data-cursor-text="VIEW">
+                        <img src="assets/images/01_dragon_chicken.avif" alt="Dragon Chicken">
                         <div class="g-hover"><span class="view-btn">VIEW</span></div>
                     </div>
-                    <div class="gallery-card g-item food" data-img="assets/images/dish_curry.png"
-                        data-caption="Clay Pot Slow Cooked Curry" data-cursor-text="VIEW">
-                        <img src="assets/images/dish_curry.png" alt="Clay Pot Curry">
+                    <div class="gallery-card g-item food" data-img="assets/images/05_paneer_butter_masala.avif"
+                        data-caption="Rich Paneer Butter Masala" data-cursor-text="VIEW">
+                        <img src="assets/images/05_paneer_butter_masala.avif" alt="Paneer Butter Masala">
                         <div class="g-hover"><span class="view-btn">VIEW</span></div>
                     </div>
                     <div class="gallery-card g-item interiors" data-img="assets/images/space_lamps.png"
@@ -733,9 +1893,19 @@
                         <img src="assets/images/space_lamps.png" alt="Lamps">
                         <div class="g-hover"><span class="view-btn">VIEW</span></div>
                     </div>
-                    <div class="gallery-card g-item food" data-img="assets/images/dish_cake.png"
-                        data-caption="Warm Jaggery Cake &amp; Vanilla Cream" data-cursor-text="VIEW">
-                        <img src="assets/images/dish_cake.png" alt="Dessert Cake">
+                    <div class="gallery-card g-item food" data-img="assets/images/03_grill_cooking.avif"
+                        data-caption="Live Charcoal Flame Barbecue" data-cursor-text="VIEW">
+                        <img src="assets/images/03_grill_cooking.avif" alt="Live Charcoal BBQ">
+                        <div class="g-hover"><span class="view-btn">VIEW</span></div>
+                    </div>
+                    <div class="gallery-card g-item nature" data-img="assets/images/space_entry.png"
+                        data-caption="Lantern Illuminated Stone Entrance" data-cursor-text="VIEW">
+                        <img src="assets/images/space_entry.png" alt="Nature Pathway">
+                        <div class="g-hover"><span class="view-btn">VIEW</span></div>
+                    </div>
+                    <div class="gallery-card g-item food" data-img="assets/images/02_falooda.avif"
+                        data-caption="Royal Rose Falooda &amp; Ice Cream" data-cursor-text="VIEW">
+                        <img src="assets/images/02_falooda.avif" alt="Royal Falooda">
                         <div class="g-hover"><span class="view-btn">VIEW</span></div>
                     </div>
                 </div>
@@ -867,7 +2037,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="resPhone">PHONE</label>
-                                    <input type="tel" id="resPhone" name="phone" required placeholder="+91 98450 00000"
+                                    <input type="tel" id="resPhone" name="phone" required placeholder="+91 76958 67096"
                                         pattern="[\+]?[0-9\s\-]{8,20}">
                                 </div>
                                 <div class="form-group span-2">
@@ -892,14 +2062,57 @@
                                     </select>
                                 </div>
                                 <div class="form-group span-2">
-                                    <label for="resGuests">NUMBER OF GUESTS</label>
-                                    <select id="resGuests" name="guests" required>
-                                        <option value="1">1 Guest</option>
-                                        <option value="2" selected>2 Guests</option>
-                                        <option value="3">3 Guests</option>
-                                        <option value="4">4 Guests</option>
-                                        <option value="5">5 Guests</option>
-                                        <option value="6+">6+ Guests (Group)</option>
+                                    <label for="resTable">BOOK TABLES</label>
+                                    <div class="table-legend-hints">
+                                        <span class="legend-badge">🌿 Garden: G1–G8 (Max 4 Persons)</span>
+                                        <span class="legend-badge">❄️ AC: A1–A4 (Max 4 Persons)</span>
+                                        <span class="legend-badge">🕯️ Couples: T1–T4</span>
+                                    </div>
+                                    <select id="resTable" name="table" required>
+                                        <option value="" disabled selected>-- Select a Table --</option>
+
+                                        <optgroup label="🌿 GARDEN TABLES (Max 4 persons for 1 table)">
+                                            <option value="" disabled class="opt-header">━━━━ 🌿 GARDEN TABLES (G1–G8 ·
+                                                Max 4 Persons) ━━━━</option>
+                                            <option value="Garden Table - G1 (Max 4 Persons)">Garden Table G1 - Only 4
+                                                persons for 1 table</option>
+                                            <option value="Garden Table - G2 (Max 4 Persons)">Garden Table G2 - Only 4
+                                                persons for 1 table</option>
+                                            <option value="Garden Table - G3 (Max 4 Persons)">Garden Table G3 - Only 4
+                                                persons for 1 table</option>
+                                            <option value="Garden Table - G4 (Max 4 Persons)">Garden Table G4 - Only 4
+                                                persons for 1 table</option>
+                                            <option value="Garden Table - G5 (Max 4 Persons)">Garden Table G5 - Only 4
+                                                persons for 1 table</option>
+                                            <option value="Garden Table - G6 (Max 4 Persons)">Garden Table G6 - Only 4
+                                                persons for 1 table</option>
+                                            <option value="Garden Table - G7 (Max 4 Persons)">Garden Table G7 - Only 4
+                                                persons for 1 table</option>
+                                            <option value="Garden Table - G8 (Max 4 Persons)">Garden Table G8 - Only 4
+                                                persons for 1 table</option>
+                                        </optgroup>
+
+                                        <optgroup label="❄️ AC TABLES (Max 4 persons for 1 table)">
+                                            <option value="" disabled class="opt-header">━━━━ ❄️ AC TABLES (A1–A4 · Max
+                                                4 Persons) ━━━━</option>
+                                            <option value="AC Table - A1 (Max 4 Persons)">AC Table A1 - Only 4 persons
+                                                for 1 table</option>
+                                            <option value="AC Table - A2 (Max 4 Persons)">AC Table A2 - Only 4 persons
+                                                for 1 table</option>
+                                            <option value="AC Table - A3 (Max 4 Persons)">AC Table A3 - Only 4 persons
+                                                for 1 table</option>
+                                            <option value="AC Table - A4 (Max 4 Persons)">AC Table A4 - Only 4 persons
+                                                for 1 table</option>
+                                        </optgroup>
+
+                                        <optgroup label="🕯️ COUPLES TABLES (T1–T4)">
+                                            <option value="" disabled class="opt-header">━━━━ 🕯️ COUPLES TABLES (T1–T4)
+                                                ━━━━</option>
+                                            <option value="Couples Table - T1">Couples Table T1</option>
+                                            <option value="Couples Table - T2">Couples Table T2</option>
+                                            <option value="Couples Table - T3">Couples Table T3</option>
+                                            <option value="Couples Table - T4">Couples Table T4</option>
+                                        </optgroup>
                                     </select>
                                 </div>
                                 <div class="form-group span-2">
@@ -939,7 +2152,7 @@
 
                     <div class="info-block">
                         <span class="block-label">CONTACT</span>
-                        <p class="block-val"><a href="tel:+919845000000">+91&nbsp;98450&nbsp;00000</a></p>
+                        <p class="block-val"><a href="tel:+917695867096">+91&nbsp;76958&nbsp;67096</a></p>
                         <p class="block-val"><a href="mailto:hello@iharestaurant.com">hello@iharestaurant.com</a></p>
                     </div>
 
@@ -965,8 +2178,8 @@
                 <div class="section-tag">CONTACT</div>
                 <h2 class="banner-title">Come experience IHA.</h2>
                 <div class="banner-contact-row">
-                    <span><a href="tel:+919845000000"><span
-                                class="icon">📞</span>&nbsp;+91&nbsp;98450&nbsp;00000</a></span>
+                    <span><a href="tel:+917695867096"><span
+                                class="icon">📞</span>&nbsp;+91&nbsp;76958&nbsp;67096</a></span>
                     <span><a href="mailto:hello@iharestaurant.com"><span
                                 class="icon">✉️</span>&nbsp;hello@iharestaurant.com</a></span>
                     <span><span class="icon">🕒</span>&nbsp;Open Daily from 12:00 PM</span>
@@ -1015,7 +2228,7 @@
             <div class="footer-col">
                 <h4 class="footer-heading">CONTACT</h4>
                 <p class="footer-text">Outer Ring Road, 2nd Stage, Nagarabhavi<br>Bengaluru, Karnataka 560091</p>
-                <p class="footer-text margin-top-small"><a href="tel:+919845000000">+91&nbsp;98450&nbsp;00000</a></p>
+                <p class="footer-text margin-top-small"><a href="tel:+917695867096">+91&nbsp;76958&nbsp;67096</a></p>
                 <p class="footer-text"><a href="mailto:hello@iharestaurant.com">hello@iharestaurant.com</a></p>
             </div>
         </div>
@@ -1046,7 +2259,7 @@
                     </div>
                     <div class="form-group">
                         <label for="mResPhone">PHONE</label>
-                        <input type="tel" id="mResPhone" name="phone" required placeholder="+91 98450 00000"
+                        <input type="tel" id="mResPhone" name="phone" required placeholder="+91 76958 67096"
                             pattern="[\+]?[0-9\s\-]{8,20}">
                     </div>
                     <div class="form-group span-2">
@@ -1068,11 +2281,57 @@
                         </select>
                     </div>
                     <div class="form-group span-2">
-                        <label for="mResGuests">GUESTS</label>
-                        <select id="mResGuests" name="guests" required>
-                            <option value="2">2 Guests</option>
-                            <option value="4">4 Guests</option>
-                            <option value="6">6+ Guests</option>
+                        <label for="mResTable">BOOK TABLES</label>
+                        <div class="table-legend-hints">
+                            <span class="legend-badge">🌿 Garden: G1–G8 (Max 4 Persons)</span>
+                            <span class="legend-badge">❄️ AC: A1–A4 (Max 4 Persons)</span>
+                            <span class="legend-badge">🕯️ Couples: T1–T4</span>
+                        </div>
+                        <select id="mResTable" name="table" required>
+                            <option value="" disabled selected>-- Select a Table --</option>
+
+                            <optgroup label="🌿 GARDEN TABLES (Max 4 persons for 1 table)">
+                                <option value="" disabled class="opt-header">━━━━ 🌿 GARDEN TABLES (G1–G8 · Max 4
+                                    Persons) ━━━━</option>
+                                <option value="Garden Table - G1 (Max 4 Persons)">Garden Table G1 - Only 4 persons for 1
+                                    table</option>
+                                <option value="Garden Table - G2 (Max 4 Persons)">Garden Table G2 - Only 4 persons for 1
+                                    table</option>
+                                <option value="Garden Table - G3 (Max 4 Persons)">Garden Table G3 - Only 4 persons for 1
+                                    table</option>
+                                <option value="Garden Table - G4 (Max 4 Persons)">Garden Table G4 - Only 4 persons for 1
+                                    table</option>
+                                <option value="Garden Table - G5 (Max 4 Persons)">Garden Table G5 - Only 4 persons for 1
+                                    table</option>
+                                <option value="Garden Table - G6 (Max 4 Persons)">Garden Table G6 - Only 4 persons for 1
+                                    table</option>
+                                <option value="Garden Table - G7 (Max 4 Persons)">Garden Table G7 - Only 4 persons for 1
+                                    table</option>
+                                <option value="Garden Table - G8 (Max 4 Persons)">Garden Table G8 - Only 4 persons for 1
+                                    table</option>
+                            </optgroup>
+
+                            <optgroup label="❄️ AC TABLES (Max 4 persons for 1 table)">
+                                <option value="" disabled class="opt-header">━━━━ ❄️ AC TABLES (A1–A4 · Max 4 Persons)
+                                    ━━━━</option>
+                                <option value="AC Table - A1 (Max 4 Persons)">AC Table A1 - Only 4 persons for 1 table
+                                </option>
+                                <option value="AC Table - A2 (Max 4 Persons)">AC Table A2 - Only 4 persons for 1 table
+                                </option>
+                                <option value="AC Table - A3 (Max 4 Persons)">AC Table A3 - Only 4 persons for 1 table
+                                </option>
+                                <option value="AC Table - A4 (Max 4 Persons)">AC Table A4 - Only 4 persons for 1 table
+                                </option>
+                            </optgroup>
+
+                            <optgroup label="🕯️ COUPLES TABLES (T1–T4)">
+                                <option value="" disabled class="opt-header">━━━━ 🕯️ COUPLES TABLES (T1–T4) ━━━━
+                                </option>
+                                <option value="Couples Table - T1">Couples Table T1</option>
+                                <option value="Couples Table - T2">Couples Table T2</option>
+                                <option value="Couples Table - T3">Couples Table T3</option>
+                                <option value="Couples Table - T4">Couples Table T4</option>
+                            </optgroup>
                         </select>
                     </div>
                 </div>
@@ -1100,7 +2359,7 @@
                     </div>
                     <div class="form-group">
                         <label for="evtPhone">PHONE</label>
-                        <input type="tel" id="evtPhone" name="phone" required placeholder="+91 98450 00000"
+                        <input type="tel" id="evtPhone" name="phone" required placeholder="+91 76958 67096"
                             pattern="[\+]?[0-9\s\-]{8,20}">
                     </div>
                     <div class="form-group">

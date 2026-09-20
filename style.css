@@ -31,63 +31,89 @@
     --shadow-glow: 0 0 25px rgba(212, 175, 55, 0.15);
 }
 
-/* Custom Cursor Follower Styles */
+/* Custom Real Botanical Leaf Cursor & Follower Styles */
 .custom-cursor {
     position: fixed;
     top: 0;
     left: 0;
-    width: 8px;
-    height: 8px;
-    background-color: var(--text-gold);
+    width: 6px;
+    height: 6px;
+    background: #a3e635;
     border-radius: 50%;
     pointer-events: none;
     z-index: 10000;
     transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    box-shadow: 0 0 8px rgba(163, 230, 53, 0.9), 0 0 2px #fff;
+    transition: transform 0.05s ease-out;
 }
 
 .cursor-follower {
     position: fixed;
     top: 0;
     left: 0;
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(212, 175, 55, 0.6);
-    background-color: rgba(212, 175, 55, 0.05);
-    backdrop-filter: blur(2px);
-    border-radius: 50%;
+    width: 36px;
+    height: 26px;
+    border: none;
+    background: transparent;
+    border-radius: 0;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.15s ease-out, width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s, border-color 0.3s;
+    transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.cursor-real-leaf {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 8px rgba(163, 230, 53, 0.4));
+    transition: transform 0.25s ease, filter 0.25s ease;
+    user-select: none;
+    pointer-events: none;
 }
 
 .cursor-follower.active {
-    width: 85px;
-    height: 85px;
-    background-color: rgba(212, 175, 55, 0.88);
-    border-color: var(--text-gold);
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    width: 58px;
+    height: 42px;
+}
+
+.cursor-follower.active .cursor-real-leaf {
+    filter: drop-shadow(0 0 18px rgba(163, 230, 53, 0.8)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7));
 }
 
 .cursor-text {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.7);
     font-family: var(--font-sans);
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 700;
-    letter-spacing: 0.15em;
-    color: #0b150c;
+    letter-spacing: 0.14em;
+    color: #fef08a;
+    background: rgba(10, 20, 12, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    padding: 2px 8px;
+    border-radius: 20px;
     opacity: 0;
-    transform: scale(0.5);
-    transition: opacity 0.2s, transform 0.2s;
+    white-space: nowrap;
     pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    text-align: center;
 }
 
 .cursor-follower.active .cursor-text {
     opacity: 1;
-    transform: scale(1);
+    transform: translateX(-50%) scale(1);
 }
 
 /* Background Animated Leaf Canvas */
@@ -553,7 +579,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 24px 180px 24px;
+    padding: 100px 24px 60px 24px;
     text-align: center;
     overflow: hidden;
 }
@@ -564,10 +590,10 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/images/hero_bg.png');
+    background-image: url('assets/images/iha-restaurant-natural-hero.avif');
     background-size: cover;
     background-position: center;
-    transform: scale(1.05);
+    transform: scale(1.03);
     animation: subtleZoom 20s infinite alternate ease-in-out;
 }
 
@@ -577,7 +603,7 @@ a {
     }
 
     100% {
-        transform: scale(1.08);
+        transform: scale(1.06);
     }
 }
 
@@ -587,14 +613,14 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(13, 25, 15, 0.6) 0%, rgba(13, 25, 15, 0.4) 50%, rgba(13, 25, 15, 0.95) 100%);
+    background: linear-gradient(180deg, rgba(8, 18, 11, 0.52) 0%, rgba(8, 18, 11, 0.22) 45%, rgba(8, 18, 11, 0.5) 100%);
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 800px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .badge-tag {
@@ -614,6 +640,7 @@ a {
     font-size: 4.2rem;
     line-height: 1.1;
     margin-bottom: 20px;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75);
 }
 
 .title-accent {
@@ -623,9 +650,10 @@ a {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: #c7d6c8;
+    color: #dce7dc;
     margin-bottom: 36px;
     font-weight: 300;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
 }
 
 .hero-buttons {
@@ -637,7 +665,7 @@ a {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 120px;
+    bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
@@ -681,45 +709,6 @@ a {
     100% {
         transform: scaleY(0);
         transform-origin: bottom;
-    }
-}
-
-/* Stones & Ferns Foreground Overlay */
-.stones-overlay-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-    pointer-events: none;
-    line-height: 0;
-    overflow: hidden;
-}
-
-.stones-border-img {
-    width: 100%;
-    height: 320px;
-    max-height: 320px;
-    object-fit: cover;
-    object-position: center 85%;
-    opacity: 0.95;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 1) 100%);
-    filter: drop-shadow(0 -10px 20px rgba(0, 0, 0, 0.6));
-    animation: plantSway 10s infinite alternate ease-in-out;
-}
-
-@keyframes plantSway {
-    0% {
-        transform: translateY(0) scale(1) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-4px) scale(1.01) rotate(0.4deg);
-    }
-
-    100% {
-        transform: translateY(-2px) scale(1.02) rotate(-0.4deg);
     }
 }
 
@@ -805,7 +794,6 @@ a {
     gap: 24px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     padding-bottom: 20px;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -840,11 +828,12 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.06);
     transition: transform var(--transition-slow);
 }
 
 .signature-card:hover .card-img-holder img {
-    transform: scale(1.08);
+    transform: scale(1.14);
 }
 
 .card-badge {
@@ -995,28 +984,164 @@ a {
 }
 
 .category-header {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     border-bottom: 1px solid var(--border-gold);
     padding-bottom: 8px;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .cat-label {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.2em;
     color: var(--text-gold);
+    text-transform: uppercase;
+}
+
+/* Menu Top Notice Strip (Halal, Shawarma highlight) */
+.menu-notice-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: linear-gradient(135deg, rgba(20, 36, 23, 0.95), rgba(13, 25, 15, 0.95));
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: var(--radius-md);
+    padding: 14px 24px;
+    margin-bottom: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.notice-pill-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.notice-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--text-primary);
+}
+
+.notice-pill.halal-pill {
+    border-color: rgba(74, 222, 128, 0.4);
+    background: rgba(74, 222, 128, 0.08);
+    color: #86efac;
+}
+
+.notice-pill.delivery-pill {
+    border-color: rgba(212, 175, 55, 0.5);
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--text-gold);
+}
+
+.notice-pill.delivery-pill a {
+    color: var(--text-gold);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.notice-pill.delivery-pill a:hover {
+    text-decoration: underline;
+}
+
+.notice-pill.shawarma-pill {
+    border-color: rgba(248, 113, 113, 0.4);
+    background: rgba(248, 113, 113, 0.1);
+    color: #fca5a5;
+}
+
+/* Menu Sub-groups (Veg / Non-Veg / Gravies / Seafoods inside panels) */
+.menu-subgroup {
+    margin-bottom: 40px;
+}
+
+.menu-subgroup:last-child {
+    margin-bottom: 0;
+}
+
+.subgroup-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subgroup-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.subgroup-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.badge-veg {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.badge-nonveg {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.badge-seafood {
+    background: rgba(14, 165, 233, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(14, 165, 233, 0.35);
+}
+
+.badge-special {
+    background: rgba(212, 175, 55, 0.15);
+    color: #fef08a;
+    border: 1px solid rgba(212, 175, 55, 0.35);
 }
 
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 36px 48px;
+    gap: 28px 48px;
 }
 
 .menu-item {
     display: flex;
     flex-direction: column;
+    padding: 6px 0;
+    transition: transform var(--transition-fast);
+}
+
+.menu-item:hover {
+    transform: translateX(4px);
 }
 
 .item-head {
@@ -1024,28 +1149,79 @@ a {
     align-items: baseline;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .item-title {
-    font-size: 1.4rem;
-    white-space: nowrap;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #f5f5f5;
+    line-height: 1.35;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    max-width: 70%;
 }
 
 .item-line {
     flex: 1;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.15);
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+    margin: 0 4px;
 }
 
 .item-price {
     font-family: var(--font-sans);
+    font-size: 1.05rem;
     font-weight: 600;
+    color: var(--text-gold);
+    white-space: nowrap;
+    text-align: right;
+}
+
+.price-options {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-family: var(--font-sans);
     color: var(--text-gold);
 }
 
-.item-desc {
-    font-size: 0.9rem;
+.price-chip {
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-weight: 600;
+}
+
+.price-chip small {
     color: var(--text-muted);
+    font-weight: 400;
+    margin-right: 2px;
+    font-size: 0.75rem;
+}
+
+.item-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.item-tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.tag-mini {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-secondary);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1083,11 +1259,12 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.04);
     transition: transform var(--transition-slow);
 }
 
 .masonry-item:hover img {
-    transform: scale(1.06);
+    transform: scale(1.09);
 }
 
 .item-overlay {
@@ -1221,11 +1398,12 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.06);
     transition: transform var(--transition-slow);
 }
 
 .gallery-card:hover img {
-    transform: scale(1.08);
+    transform: scale(1.14);
 }
 
 .g-hover {
@@ -1412,6 +1590,45 @@ a {
 .form-group textarea:focus {
     border-color: var(--text-gold);
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.table-legend-hints {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.legend-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-gold);
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 4px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.02em;
+}
+
+.form-group select optgroup {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.form-group select option {
+    background-color: #0b170e;
+    color: #ffffff;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+}
+
+.form-group select option.opt-header {
+    background-color: #1a3320 !important;
+    color: #ffd700 !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -2006,14 +2223,8 @@ a {
         width: 100%;
     }
 
-    .stones-border-img {
-        height: 220px;
-        max-height: 220px;
-        object-position: center 85%;
-    }
-
     .scroll-indicator {
-        bottom: 80px;
+        bottom: 16px;
     }
 
     /* Section Typography */
@@ -2051,6 +2262,20 @@ a {
         font-size: 0.75rem;
         padding: 6px 12px;
         white-space: nowrap;
+    }
+
+    .item-title {
+        max-width: 62%;
+        font-size: 1.05rem;
+    }
+
+    .item-price {
+        font-size: 0.95rem;
+    }
+
+    .price-options {
+        flex-wrap: wrap;
+        justify-content: flex-end;
     }
 
     /* Grids & Cards */

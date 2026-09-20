@@ -217,7 +217,7 @@ $phone = isset($inputData['phone']) ? htmlspecialchars(trim($inputData['phone'])
 $email = isset($inputData['email']) ? htmlspecialchars(trim($inputData['email'])) : '';
 $date = isset($inputData['date']) ? htmlspecialchars(trim($inputData['date'])) : '';
 $time = isset($inputData['time']) ? htmlspecialchars(trim($inputData['time'])) : '';
-$guests = isset($inputData['guests']) ? htmlspecialchars(trim($inputData['guests'])) : '';
+$table = isset($inputData['table']) ? htmlspecialchars(trim($inputData['table'])) : (isset($inputData['guests']) ? htmlspecialchars(trim($inputData['guests'])) : '');
 $specialRequest = isset($inputData['special_request']) ? htmlspecialchars(trim($inputData['special_request'])) : '';
 $eventType = isset($inputData['event_type']) ? htmlspecialchars(trim($inputData['event_type'])) : '';
 $details = isset($inputData['details']) ? htmlspecialchars(trim($inputData['details'])) : '';
@@ -298,8 +298,8 @@ if ($formType === 'event') {
             <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'>$date at $time</td>
         </tr>
         <tr>
-            <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Number of Guests:</td>
-            <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'>$guests</td>
+            <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Booked Table:</td>
+            <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'>$table</td>
         </tr>
         <tr>
             <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Special Request:</td>

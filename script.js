@@ -77,21 +77,157 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Signatures Dish Carousel Controls
+    // 4. Signatures Dish Carousel Controls & Infinite Continuous Autoplay
     const sigCarousel = document.getElementById('sigCarousel');
     const sigPrevBtn = document.getElementById('sigPrevBtn');
     const sigNextBtn = document.getElementById('sigNextBtn');
 
     if (sigCarousel && sigPrevBtn && sigNextBtn) {
-        const scrollAmount = 360;
+        const originalCards = Array.from(sigCarousel.querySelectorAll('.signature-card'));
+        const originalCount = originalCards.length;
 
+        if (originalCount > 0) {
+            // Clone cards: 1 set appended to end, 1 set prepended to start for continuous infinite loop
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                clone.classList.add('carousel-clone');
+                sigCarousel.appendChild(clone);
+            });
+
+            originalCards.slice().reverse().forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                clone.classList.add('carousel-clone');
+                sigCarousel.insertBefore(clone, sigCarousel.firstChild);
+            });
+        }
+
+        const getScrollStep = () => {
+            const card = sigCarousel.querySelector('.signature-card');
+            if (!card) return 364;
+            const style = window.getComputedStyle(sigCarousel);
+            const gap = parseFloat(style.gap) || 24;
+            return card.offsetWidth + gap;
+        };
+
+        const getSingleSetWidth = () => {
+            return originalCount * getScrollStep();
+        };
+
+        // Initialize scroll position to the main set (after the prepended clones)
+        const initScrollPos = () => {
+            const setWidth = getSingleSetWidth();
+            if (setWidth > 0) {
+                sigCarousel.scrollTo({ left: setWidth, behavior: 'instant' });
+            }
+        };
+
+        // Position on next paint
+        requestAnimationFrame(() => {
+            initScrollPos();
+            setTimeout(initScrollPos, 100);
+        });
+
+        window.addEventListener('resize', () => {
+            initScrollPos();
+        });
+
+        let isNormalizing = false;
+
+        const checkInfiniteBounds = () => {
+            if (isNormalizing) return;
+            const singleSet = getSingleSetWidth();
+            if (singleSet <= 0) return;
+
+            // If we've scrolled into the post-clones past the original set
+            if (sigCarousel.scrollLeft >= singleSet * 2 - 10) {
+                isNormalizing = true;
+                sigCarousel.scrollTo({
+                    left: sigCarousel.scrollLeft - singleSet,
+                    behavior: 'instant'
+                });
+                setTimeout(() => { isNormalizing = false; }, 60);
+            }
+            // If we've scrolled back into the pre-clones
+            else if (sigCarousel.scrollLeft <= singleSet - getScrollStep() + 10) {
+                isNormalizing = true;
+                sigCarousel.scrollTo({
+                    left: sigCarousel.scrollLeft + singleSet,
+                    behavior: 'instant'
+                });
+                setTimeout(() => { isNormalizing = false; }, 60);
+            }
+        };
+
+        const scrollNext = () => {
+            checkInfiniteBounds();
+            const step = getScrollStep();
+            sigCarousel.scrollBy({ left: step, behavior: 'smooth' });
+            setTimeout(checkInfiniteBounds, 520);
+        };
+
+        const scrollPrev = () => {
+            checkInfiniteBounds();
+            const step = getScrollStep();
+            sigCarousel.scrollBy({ left: -step, behavior: 'smooth' });
+            setTimeout(checkInfiniteBounds, 520);
+        };
+
+        // Button Controls
         sigNextBtn.addEventListener('click', () => {
-            sigCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            scrollNext();
+            resetAutoPlay();
         });
 
         sigPrevBtn.addEventListener('click', () => {
-            sigCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            scrollPrev();
+            resetAutoPlay();
         });
+
+        // Autoplay Loop (Moves forward every 2.8 seconds)
+        let autoPlayTimer = null;
+        const autoPlayDelay = 2800;
+
+        const startAutoPlay = () => {
+            if (autoPlayTimer) clearInterval(autoPlayTimer);
+            autoPlayTimer = setInterval(scrollNext, autoPlayDelay);
+        };
+
+        const stopAutoPlay = () => {
+            if (autoPlayTimer) {
+                clearInterval(autoPlayTimer);
+                autoPlayTimer = null;
+            }
+        };
+
+        const resetAutoPlay = () => {
+            stopAutoPlay();
+            startAutoPlay();
+        };
+
+        // Start autoplay on load
+        startAutoPlay();
+
+        // Pause autoplay on hover or touch so user can examine or interact comfortably
+        const carouselWrapper = sigCarousel.closest('.carousel-wrapper') || sigCarousel;
+        carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
+        carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+        carouselWrapper.addEventListener('touchstart', stopAutoPlay, { passive: true });
+        carouselWrapper.addEventListener('touchend', () => {
+            setTimeout(startAutoPlay, 1200);
+        });
+
+        // Listen for scroll end to seamlessly normalize positions without visual jump
+        if ('onscrollend' in window) {
+            sigCarousel.addEventListener('scrollend', checkInfiniteBounds);
+        }
+
+        let scrollTimeout = null;
+        sigCarousel.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(checkInfiniteBounds, 120);
+        }, { passive: true });
 
         // Mouse Drag to Scroll
         let isDown = false;
@@ -100,18 +236,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sigCarousel.addEventListener('mousedown', (e) => {
             isDown = true;
+            stopAutoPlay();
             startX = e.pageX - sigCarousel.offsetLeft;
             scrollLeft = sigCarousel.scrollLeft;
         });
 
-        sigCarousel.addEventListener('mouseleave', () => { isDown = false; });
-        sigCarousel.addEventListener('mouseup', () => { isDown = false; });
+        sigCarousel.addEventListener('mouseleave', () => {
+            isDown = false;
+            startAutoPlay();
+        });
+
+        sigCarousel.addEventListener('mouseup', () => {
+            isDown = false;
+            startAutoPlay();
+            checkInfiniteBounds();
+        });
 
         sigCarousel.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - sigCarousel.offsetLeft;
-            const walk = (x - startX) * 2;
+            const walk = (x - startX) * 1.8;
             sigCarousel.scrollLeft = scrollLeft - walk;
         });
     }
@@ -389,8 +534,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
     let followerX = 0, followerY = 0;
+    let prevMouseX = 0, prevMouseY = 0;
+    let leafAngle = 0;
+    let targetAngle = 0;
 
     window.addEventListener('mousemove', (e) => {
+        const dx = e.clientX - prevMouseX;
+        if (Math.abs(dx) > 0.5) {
+            targetAngle = Math.max(-14, Math.min(14, dx * 0.6));
+        }
+        prevMouseX = e.clientX;
+        prevMouseY = e.clientY;
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
@@ -400,15 +554,18 @@ document.addEventListener('DOMContentLoaded', () => {
         cursorX += (mouseX - cursorX) * 0.8;
         cursorY += (mouseY - cursorY) * 0.8;
 
-        followerX += (mouseX - followerX) * 0.18;
-        followerY += (mouseY - followerY) * 0.18;
+        followerX += (mouseX - followerX) * 0.22;
+        followerY += (mouseY - followerY) * 0.22;
+
+        leafAngle += (targetAngle - leafAngle) * 0.12;
+        targetAngle *= 0.9; // smoothly settles upright
 
         if (customCursor) {
             customCursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
         }
 
         if (cursorFollower) {
-            cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
+            cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%) rotate(${leafAngle}deg)`;
         }
 
         requestAnimationFrame(animateCursor);
