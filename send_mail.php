@@ -32,15 +32,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // -----------------------------------------------------------------------------
 // GOOGLE SMTP CONFIGURATION
 // -----------------------------------------------------------------------------
-// 1. Enter your Gmail address below (e.g., 'yourname@gmail.com')
+// 1. Authenticated Google SMTP sender account
 define('GMAIL_USER', 'thirumalaiviswa37@gmail.com');
 
-// 2. Enter your 16-character Google App Password (without spaces)
-//    How to generate: Google Account -> Security -> 2-Step Verification -> App Passwords
+// 2. 16-character Google App Password for the sender account
 define('GMAIL_APP_PASS', 'eeuhrouzuhprccnq');
 
-// 3. Email address where you want to receive reservation notifications
-define('RECIPIENT_EMAIL', 'thirumalaiviswa37@gmail.com');
+// 3. Email address where you receive all reservation & celebration notifications
+define('RECIPIENT_EMAIL', 'iharesturent16@gmail.com');
 
 // 4. Restaurant / Brand Name
 define('BRAND_NAME', 'IHA Restaurant');
@@ -135,18 +134,24 @@ function sendGoogleSmtpMail($to, $subject, $bodyHtml, $replyToEmail, $smtpUser, 
         $replyTo = !empty($replyToEmail) ? filter_var($replyToEmail, FILTER_VALIDATE_EMAIL) : $smtpUser;
         if (!$replyTo) $replyTo = $smtpUser;
 
+        $dateHeader = date('r');
+        $msgId = '<' . time() . '.' . bin2hex(random_bytes(8)) . '@gmail.com>';
+
         $logoPath = __DIR__ . '/assets/images/logo.png';
         if (file_exists($logoPath)) {
             $boundary = '----=_NextPart_' . md5(time() . rand());
             $logoContent = base64_encode(file_get_contents($logoPath));
 
-            $headers  = "MIME-Version: 1.0\r\n";
+            $headers  = "Date: $dateHeader\r\n";
+            $headers .= "Message-ID: $msgId\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: multipart/related; boundary=\"$boundary\"\r\n";
             $headers .= "From: " . BRAND_NAME . " <$smtpUser>\r\n";
             $headers .= "Reply-To: $replyTo\r\n";
             $headers .= "To: <$to>\r\n";
             $headers .= "Subject: =?UTF-8?B?" . base64_encode($subject) . "?=\r\n";
             $headers .= "X-Mailer: Core PHP Google SMTP\r\n";
+            $headers .= "Auto-Submitted: auto-generated\r\n";
 
             $mimeMessage  = "--$boundary\r\n";
             $mimeMessage .= "Content-Type: text/html; charset=UTF-8\r\n";
@@ -166,13 +171,16 @@ function sendGoogleSmtpMail($to, $subject, $bodyHtml, $replyToEmail, $smtpUser, 
             // Escape dot-stuffing for raw SMTP message lines
             $escapedBody = str_replace("\r\n.", "\r\n..", $bodyHtml);
 
-            $headers  = "MIME-Version: 1.0\r\n";
+            $headers  = "Date: $dateHeader\r\n";
+            $headers .= "Message-ID: $msgId\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
             $headers .= "From: " . BRAND_NAME . " <$smtpUser>\r\n";
             $headers .= "Reply-To: $replyTo\r\n";
             $headers .= "To: <$to>\r\n";
             $headers .= "Subject: =?UTF-8?B?" . base64_encode($subject) . "?=\r\n";
             $headers .= "X-Mailer: Core PHP Google SMTP\r\n";
+            $headers .= "Auto-Submitted: auto-generated\r\n";
 
             $fullMessage = $headers . "\r\n" . $escapedBody . "\r\n.";
         }
@@ -219,7 +227,7 @@ $date = isset($inputData['date']) ? htmlspecialchars(trim($inputData['date'])) :
 $time = isset($inputData['time']) ? htmlspecialchars(trim($inputData['time'])) : '';
 $table = isset($inputData['table']) ? htmlspecialchars(trim($inputData['table'])) : (isset($inputData['guests']) ? htmlspecialchars(trim($inputData['guests'])) : '');
 $specialRequest = isset($inputData['special_request']) ? htmlspecialchars(trim($inputData['special_request'])) : '';
-$eventType = isset($inputData['event_type']) ? htmlspecialchars(trim($inputData['event_type'])) : '';
+$eventType = isset($inputData['event_type']) ? htmlspecialchars(trim($inputData['event_type'])) : (isset($inputData['occasion']) ? htmlspecialchars(trim($inputData['occasion'])) : '');
 $details = isset($inputData['details']) ? htmlspecialchars(trim($inputData['details'])) : '';
 
 // Quick Validation
@@ -252,7 +260,39 @@ if (GMAIL_USER === 'your-gmail-address@gmail.com' || GMAIL_APP_PASS === 'your-16
 // -----------------------------------------------------------------------------
 // BUILD ELEGANT HTML EMAIL TEMPLATE
 // -----------------------------------------------------------------------------
-if ($formType === 'event') {
+if ($formType === 'celebration') {
+    $occasion = !empty($eventType) ? $eventType : 'Birthday / Anniversary Celebration';
+    $emoji = (stripos($occasion, 'Birthday') !== false) ? '🎂' : '💍';
+    $subject = "$emoji New $occasion Reservation from $name";
+    $title = "New $occasion Reservation";
+    $cakeRequests = !empty($details) ? $details : (!empty($specialRequest) ? $specialRequest : 'None');
+    $fieldsHtml = "
+        <tr>
+            <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Occasion:</td>
+            <td style='padding: 10px; color: #ffffff; font-weight: bold; font-size: 15px; border-bottom: 1px solid #233d26;'>$occasion</td>
+        </tr>
+        <tr>
+            <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Guest Name:</td>
+            <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'>$name</td>
+        </tr>
+        <tr>
+            <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Phone Number:</td>
+            <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'><a href='tel:$phone' style='color: #8ed69d; text-decoration: none;'>$phone</a></td>
+        </tr>
+        <tr>
+            <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Celebration Date & Time:</td>
+            <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'>" . (!empty($time) ? "$date at $time" : $date) . "</td>
+        </tr>
+        <tr>
+            <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Selected Table / Area:</td>
+            <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'>" . (!empty($table) ? $table : 'Open Seating') . "</td>
+        </tr>
+        <tr>
+            <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Cake & Special Requests:</td>
+            <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'>" . nl2br($cakeRequests) . "</td>
+        </tr>
+    ";
+} elseif ($formType === 'event') {
     $subject = "🎉 New Event Inquiry from " . $name;
     $title = "New Private Event Inquiry";
     $fieldsHtml = "
@@ -371,9 +411,11 @@ try {
         GMAIL_APP_PASS
     );
 
-    $successMsg = ($formType === 'event')
-        ? 'Event inquiry received! Our event manager will be in touch.'
-        : 'Table reservation submitted! Our team will contact you shortly.';
+    $successMsg = ($formType === 'celebration')
+        ? 'Celebration reservation submitted! Our team will contact you shortly to plan your special occasion.'
+        : (($formType === 'event')
+            ? 'Event inquiry received! Our event manager will be in touch.'
+            : 'Table reservation submitted! Our team will contact you shortly.');
 
     echo json_encode([
         'success' => true,

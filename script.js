@@ -64,17 +64,43 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Mobile Navigation Menu Toggle
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const navMenu = document.getElementById('navMenu');
+    const navBackdrop = document.getElementById('navBackdrop');
+    const drawerReserveBtn = document.getElementById('drawerReserveBtn');
+    const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+
+    const closeNavDrawer = () => {
+        if (navMenu) navMenu.classList.remove('active');
+        if (hamburgerBtn) hamburgerBtn.classList.remove('active');
+        if (navBackdrop) navBackdrop.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    };
+
+    const toggleNavDrawer = () => {
+        if (!navMenu || !hamburgerBtn) return;
+        const isActive = navMenu.classList.toggle('active');
+        hamburgerBtn.classList.toggle('active', isActive);
+        if (navBackdrop) navBackdrop.classList.toggle('active', isActive);
+        document.body.classList.toggle('menu-open', isActive);
+    };
 
     if (hamburgerBtn && navMenu) {
-        hamburgerBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+        hamburgerBtn.addEventListener('click', toggleNavDrawer);
+
+        if (drawerCloseBtn) {
+            drawerCloseBtn.addEventListener('click', closeNavDrawer);
+        }
+
+        if (navBackdrop) {
+            navBackdrop.addEventListener('click', closeNavDrawer);
+        }
 
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
+            link.addEventListener('click', closeNavDrawer);
         });
+
+        if (drawerReserveBtn) {
+            drawerReserveBtn.addEventListener('click', closeNavDrawer);
+        }
     }
 
     // 4. Signatures Dish Carousel Controls & Infinite Continuous Autoplay
@@ -373,17 +399,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeLightboxBtn) closeLightboxBtn.addEventListener('click', closeLightbox);
     if (closeLightboxBg) closeLightboxBg.addEventListener('click', closeLightbox);
 
-    // 8. Reservation & Event Modals
+    // 8. Reservation & Celebration Modals
     const reservationModal = document.getElementById('reservationModal');
+    const celebrationModal = document.getElementById('celebrationModal');
     const eventModal = document.getElementById('eventModal');
 
     const openReserveBtns = document.querySelectorAll('#openReserveModalBtn, .modal-trigger-btn');
     const closeReserveModalBtn = document.getElementById('closeReserveModalBtn');
     const closeReserveModalBg = document.getElementById('closeReserveModalBg');
 
-    const openEventModalBtn = document.getElementById('openEventModalBtn');
-    const closeEventModalBtn = document.getElementById('closeEventModalBtn');
-    const closeEventModalBg = document.getElementById('closeEventModalBg');
+    const openCelebrationModalBtn = document.getElementById('openCelebrationModalBtn');
+    const closeCelebrationModalBtn = document.getElementById('closeCelebrationModalBtn');
+    const closeCelebrationModalBg = document.getElementById('closeCelebrationModalBg');
+    const celebrationCards = document.querySelectorAll('.celebration-card');
+    const celOccasionSelect = document.getElementById('celOccasion');
 
     openReserveBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -403,6 +432,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (closeReserveModalBtn) closeReserveModalBtn.addEventListener('click', closeReservationModal);
     if (closeReserveModalBg) closeReserveModalBg.addEventListener('click', closeReservationModal);
+
+    function openCelebration(occasionType) {
+        if (celebrationModal) {
+            if (celOccasionSelect && occasionType) {
+                for (let i = 0; i < celOccasionSelect.options.length; i++) {
+                    if (celOccasionSelect.options[i].value.toLowerCase().includes(occasionType.toLowerCase())) {
+                        celOccasionSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            celebrationModal.classList.add('active');
+            celebrationModal.setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    function closeCelebrationModal() {
+        if (celebrationModal) {
+            celebrationModal.classList.remove('active');
+            celebrationModal.setAttribute('aria-hidden', 'true');
+        }
+    }
+
+    if (openCelebrationModalBtn) {
+        openCelebrationModalBtn.addEventListener('click', () => openCelebration('Birthday'));
+    }
+
+    celebrationCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const occasion = card.getAttribute('data-occasion') || 'Birthday';
+            openCelebration(occasion);
+        });
+    });
+
+    if (closeCelebrationModalBtn) closeCelebrationModalBtn.addEventListener('click', closeCelebrationModal);
+    if (closeCelebrationModalBg) closeCelebrationModalBg.addEventListener('click', closeCelebrationModal);
+
+    const openEventModalBtn = document.getElementById('openEventModalBtn');
+    const closeEventModalBtn = document.getElementById('closeEventModalBtn');
+    const closeEventModalBg = document.getElementById('closeEventModalBg');
 
     if (openEventModalBtn && eventModal) {
         openEventModalBtn.addEventListener('click', () => {
@@ -492,6 +561,14 @@ document.addEventListener('DOMContentLoaded', () => {
         modalForm.addEventListener('submit', (e) => {
             e.preventDefault();
             handleFormSubmit(modalForm, 'reservation', closeReservationModal);
+        });
+    }
+
+    const celebrationForm = document.getElementById('celebrationForm');
+    if (celebrationForm) {
+        celebrationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleFormSubmit(celebrationForm, 'celebration', closeCelebrationModal);
         });
     }
 
