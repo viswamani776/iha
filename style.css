@@ -801,16 +801,12 @@ a {
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--border-subtle);
-    background-color: var(--bg-card);
-    max-width: 520px;
-    margin: 0 auto;
 }
 
 .story-img {
     width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: contain;
+    height: 480px;
+    object-fit: cover;
     display: block;
     transition: transform var(--transition-slow);
 }
@@ -2446,8 +2442,7 @@ a {
     }
 
     .story-img {
-        height: auto;
-        max-height: 520px;
+        height: 380px;
     }
 
     .philosophy-title {
@@ -2615,8 +2610,7 @@ a {
 
     /* Story & Philosophy Typography */
     .story-img {
-        height: auto;
-        max-height: 460px;
+        height: 260px;
     }
 
     .section-heading {
