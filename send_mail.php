@@ -234,7 +234,17 @@ $details = isset($inputData['details']) ? htmlspecialchars(trim($inputData['deta
 if (empty($name) || empty($phone)) {
     echo json_encode([
         'success' => false,
-        'message' => 'Please fill in all required fields (Name and Phone).'
+        'message' => 'Please fill in all required fields (Name and Phone Number).'
+    ]);
+    exit;
+}
+
+// Validate mobile number: Must be a valid 10-digit mobile number
+$cleanPhoneForValidation = preg_replace('/[\s\-\(\)\.]/', '', $phone);
+if (!preg_match('/^(?:\+?91|0)?[6-9]\d{9}$/', $cleanPhoneForValidation)) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'Please enter a valid 10-digit mobile number (e.g. 76958 67096 or +91 76958 67096).'
     ]);
     exit;
 }
@@ -320,6 +330,11 @@ if ($formType === 'celebration') {
 } else {
     $subject = "🍽️ New Table Reservation from " . $name;
     $title = "New Table Reservation Request";
+    $emailRow = !empty($email) ? "
+        <tr>
+            <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Email Address:</td>
+            <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'><a href='mailto:$email' style='color: #8ed69d; text-decoration: none;'>$email</a></td>
+        </tr>" : "";
     $fieldsHtml = "
         <tr>
             <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Guest Name:</td>
@@ -329,10 +344,7 @@ if ($formType === 'celebration') {
             <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Phone Number:</td>
             <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'><a href='tel:$phone' style='color: #8ed69d; text-decoration: none;'>$phone</a></td>
         </tr>
-        <tr>
-            <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Email Address:</td>
-            <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'><a href='mailto:$email' style='color: #8ed69d; text-decoration: none;'>$email</a></td>
-        </tr>
+        $emailRow
         <tr>
             <td style='padding: 10px; font-weight: bold; color: #d4af37; border-bottom: 1px solid #233d26;'>Date & Time:</td>
             <td style='padding: 10px; color: #ffffff; border-bottom: 1px solid #233d26;'>$date at $time</td>

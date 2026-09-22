@@ -1666,6 +1666,15 @@ a {
     color: var(--text-gold);
 }
 
+.label-optional {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: none;
+    margin-left: 4px;
+}
+
 .form-group input,
 .form-group select,
 .form-group textarea {

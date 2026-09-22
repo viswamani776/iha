@@ -506,6 +506,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Helper for PHP Form Submissions
     async function handleFormSubmit(form, formType, onComplete) {
+        const phoneInput = form.querySelector('input[name="phone"]');
+        if (phoneInput) {
+            const rawPhone = phoneInput.value.trim();
+            const cleanPhone = rawPhone.replace(/[\s\-\(\)\.]/g, '');
+            const isValid = /^(?:\+?91|0)?[6-9]\d{9}$/.test(cleanPhone);
+            if (!isValid) {
+                showToast('Please enter a valid 10-digit mobile number (e.g. 76958 67096).');
+                phoneInput.focus();
+                return;
+            }
+        }
+
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
 
