@@ -350,6 +350,18 @@ if ($formType === 'celebration') {
 
 $submissionTime = date('F j, Y, g:i a');
 
+// Format phone for direct calling and WhatsApp
+$cleanPhone = preg_replace('/[^0-9]/', '', $phone);
+$waNumber = $cleanPhone;
+if (strlen($cleanPhone) === 10) {
+    $waNumber = '91' . $cleanPhone;
+} elseif (strlen($cleanPhone) === 11 && str_starts_with($cleanPhone, '0')) {
+    $waNumber = '91' . substr($cleanPhone, 1);
+}
+$waGreeting = rawurlencode("Hello $name, this is IHA Restaurant regarding your $title. We would love to confirm your reservation!");
+$waLink = "https://wa.me/{$waNumber}?text={$waGreeting}";
+$telLink = "tel:" . preg_replace('/[^\+0-9]/', '', $phone);
+
 $emailBody = "
 <!DOCTYPE html>
 <html>
@@ -384,10 +396,27 @@ $emailBody = "
                             </table>
                         </td>
                     </tr>
-                    <!-- Footer -->
+                    <!-- Quick Contact Action Bar -->
                     <tr>
-                        <td align='center' style='padding: 20px; background-color: #0c1a0e; border-top: 1px solid #233d26; color: #6d8570; font-size: 12px;'>
-                            Sent automatically from <strong>IHA Restaurant Website</strong> via Google SMTP.
+                        <td align='center' style='padding: 24px 30px; background-color: #0c1a0e; border-top: 1px solid #233d26;'>
+                            <p style='margin: 0 0 16px 0; color: #a0c2a5; font-size: 13px; font-weight: 500;'>Quick Actions &mdash; Contact Guest Directly:</p>
+                            <table cellpadding='0' cellspacing='0' border='0' style='margin: 0 auto;'>
+                                <tr>
+                                    <td align='center' style='padding: 0 8px 10px 8px;'>
+                                        <a href='{$waLink}' target='_blank' style='display: inline-block; background-color: #25D366; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; padding: 12px 22px; border-radius: 6px; box-shadow: 0 4px 12px rgba(37,211,102,0.3);'>
+                                            💬 Chat on WhatsApp
+                                        </a>
+                                    </td>
+                                    <td align='center' style='padding: 0 8px 10px 8px;'>
+                                        <a href='{$telLink}' style='display: inline-block; background-color: #d4af37; color: #081209; text-decoration: none; font-weight: 700; font-size: 14px; padding: 12px 22px; border-radius: 6px; box-shadow: 0 4px 12px rgba(212,175,55,0.3);'>
+                                            📞 Call {$phone}
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p style='margin: 10px 0 0 0; color: #6d8570; font-size: 12px;'>
+                                Guest: <strong style='color: #ffffff;'>{$name}</strong> &bull; Phone: <a href='{$telLink}' style='color: #8ed69d; text-decoration: none; font-weight: 600;'>{$phone}</a>
+                            </p>
                         </td>
                     </tr>
                 </table>
