@@ -137,8 +137,14 @@ function sendGoogleSmtpMail($to, $subject, $bodyHtml, $replyToEmail, $smtpUser, 
         $dateHeader = date('r');
         $msgId = '<' . time() . '.' . bin2hex(random_bytes(8)) . '@gmail.com>';
 
-        $logoPath = __DIR__ . '/assets/images/logo.png';
+        $logoPath = file_exists(__DIR__ . '/assets/images/logo.png')
+            ? __DIR__ . '/assets/images/logo.png'
+            : __DIR__ . '/assets/images/logo.avif';
+
         if (file_exists($logoPath)) {
+            $isPng = (substr($logoPath, -4) === '.png');
+            $logoMime = $isPng ? 'image/png' : 'image/avif';
+            $logoFilename = $isPng ? 'logo.png' : 'logo.avif';
             $boundary = '----=_NextPart_' . md5(time() . rand());
             $logoContent = base64_encode(file_get_contents($logoPath));
 
@@ -159,10 +165,10 @@ function sendGoogleSmtpMail($to, $subject, $bodyHtml, $replyToEmail, $smtpUser, 
             $mimeMessage .= $bodyHtml . "\r\n\r\n";
 
             $mimeMessage .= "--$boundary\r\n";
-            $mimeMessage .= "Content-Type: image/png; name=\"logo.png\"\r\n";
+            $mimeMessage .= "Content-Type: $logoMime; name=\"$logoFilename\"\r\n";
             $mimeMessage .= "Content-Transfer-Encoding: base64\r\n";
             $mimeMessage .= "Content-ID: <iha_logo>\r\n";
-            $mimeMessage .= "Content-Disposition: inline; filename=\"logo.png\"\r\n\r\n";
+            $mimeMessage .= "Content-Disposition: inline; filename=\"$logoFilename\"\r\n\r\n";
             $mimeMessage .= chunk_split($logoContent) . "\r\n";
             $mimeMessage .= "--$boundary--";
 
