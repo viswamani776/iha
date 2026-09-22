@@ -33,13 +33,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // GOOGLE SMTP CONFIGURATION
 // -----------------------------------------------------------------------------
 // 1. Authenticated Google SMTP sender account
-define('GMAIL_USER', 'thirumalaiviswa37@gmail.com');
+define('GMAIL_USER', 'support.iharestaurant@gmail.com');
 
 // 2. 16-character Google App Password for the sender account
-define('GMAIL_APP_PASS', 'eeuhrouzuhprccnq');
+define('GMAIL_APP_PASS', 'gcabbrgqwhtmgwhz');
 
 // 3. Email address where you receive all reservation & celebration notifications
-define('RECIPIENT_EMAIL', 'thirumalaiviswa37@gmail.com');
+define('RECIPIENT_EMAIL', 'support.iharestaurant@gmail.com');
 
 // 4. Restaurant / Brand Name
 define('BRAND_NAME', 'IHA Restaurant');
