@@ -39,7 +39,7 @@ define('GMAIL_USER', 'thirumalaiviswa37@gmail.com');
 define('GMAIL_APP_PASS', 'eeuhrouzuhprccnq');
 
 // 3. Email address where you receive all reservation & celebration notifications
-define('RECIPIENT_EMAIL', 'iharesturent16@gmail.com');
+define('RECIPIENT_EMAIL', 'thirumalaiviswa37@gmail.com');
 
 // 4. Restaurant / Brand Name
 define('BRAND_NAME', 'IHA Restaurant');
