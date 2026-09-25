@@ -1,0 +1,38 @@
+# robots.txt for IHA Restaurant
+# Website: https://iharestaurant.com/
+
+User-agent: *
+Allow: /
+Disallow: /send_mail.php
+Disallow: /*.php$
+Disallow: /.*
+
+# Allow major search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /assets/images/
+
+User-agent: Bingbot
+Allow: /
+
+# Allow AI crawlers for LLM discovery & search indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# XML Sitemap Location
+Sitemap: https://iharestaurant.com/sitemap.xml
+Host: https://iharestaurant.com
