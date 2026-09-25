@@ -3574,11 +3574,13 @@ a {
         gap: 36px;
     }
 
-    .chef-row-left-image .chef-image-col {
+    .chef-row-left-image .chef-image-col,
+    .chef-row-left-content .chef-image-col {
         order: 1;
     }
 
-    .chef-row-left-image .chef-content-col {
+    .chef-row-left-image .chef-content-col,
+    .chef-row-left-content .chef-content-col {
         order: 2;
     }
 
