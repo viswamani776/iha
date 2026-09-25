@@ -287,11 +287,76 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Menu Category Tab Filter & Full Menu Toggle
+    // 5. Menu Category Tab Filter & Full Menu Toggle with Dietary Filter (Non-Veg / Veg)
+    const dietBtns = document.querySelectorAll('.diet-btn');
+    const menuItems = document.querySelectorAll('.menu-item');
+    const menuSubgroups = document.querySelectorAll('.menu-subgroup');
     const tabBtns = document.querySelectorAll('.tab-btn');
     const menuPanels = document.querySelectorAll('.menu-category-panel');
     const openFullMenuBtn = document.getElementById('openFullMenuBtn');
     let isFullMenuOpen = false;
+    let currentDiet = 'nonveg';
+
+    function applyDietaryFilter(diet) {
+        currentDiet = diet;
+
+        // 1. Filter individual menu items
+        menuItems.forEach(item => {
+            const itemDiet = item.getAttribute('data-diet');
+            if (diet === 'all' || itemDiet === diet || itemDiet === 'both') {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // 2. Hide or show subgroups based on whether they have visible items
+        menuSubgroups.forEach(subgroup => {
+            const visibleItems = subgroup.querySelectorAll('.menu-item:not([style*="display: none"])');
+            if (visibleItems.length > 0) {
+                subgroup.style.display = '';
+            } else {
+                subgroup.style.display = 'none';
+            }
+        });
+
+        // 3. Update category tabs: hide tab button if category has 0 visible items
+        tabBtns.forEach(btn => {
+            const cat = btn.getAttribute('data-category');
+            const panel = document.getElementById(`cat-${cat}`);
+            if (panel) {
+                const visibleInPanel = panel.querySelectorAll('.menu-item:not([style*="display: none"])');
+                if (visibleInPanel.length === 0) {
+                    btn.style.display = 'none';
+                } else {
+                    btn.style.display = '';
+                }
+            }
+        });
+
+        // 4. If current active tab is now hidden (e.g. was on Biriyani and user tapped Veg):
+        const activeTab = document.querySelector('#menuTabs .tab-btn.active');
+        if (activeTab && activeTab.style.display === 'none') {
+            const firstVisibleTab = Array.from(tabBtns).find(btn => btn.style.display !== 'none');
+            if (firstVisibleTab) {
+                firstVisibleTab.click();
+            }
+        }
+    }
+
+    if (dietBtns.length) {
+        dietBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const diet = btn.getAttribute('data-diet');
+                dietBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                applyDietaryFilter(diet);
+            });
+        });
+
+        // Apply initial filter: NON-VEG first as requested
+        applyDietaryFilter('nonveg');
+    }
 
     if (tabBtns.length && menuPanels.length) {
         tabBtns.forEach(btn => {
@@ -349,6 +414,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const gTabBtns = document.querySelectorAll('.g-tab-btn');
     const galleryCards = document.querySelectorAll('.gallery-card');
 
+    function applyGalleryFilter(filter) {
+        galleryCards.forEach(card => {
+            if (filter === 'all' || card.classList.contains(filter)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Initialize gallery filter to match the initially active tab (e.g. food)
+    const initialActiveTab = document.querySelector('.g-tab-btn.active');
+    if (initialActiveTab) {
+        applyGalleryFilter(initialActiveTab.getAttribute('data-filter'));
+    }
+
     gTabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const filter = btn.getAttribute('data-filter');
@@ -356,13 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gTabBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            galleryCards.forEach(card => {
-                if (filter === 'all' || card.classList.contains(filter)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            applyGalleryFilter(filter);
         });
     });
 
@@ -489,6 +564,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (closeEventModalBtn) closeEventModalBtn.addEventListener('click', closeEventModal);
     if (closeEventModalBg) closeEventModalBg.addEventListener('click', closeEventModal);
+
+    // Review Scanner Modal Handler
+    const reviewModal = document.getElementById('reviewModal');
+    const openReviewModalBtns = document.querySelectorAll('#openReviewModalBtn, .review-modal-trigger-btn');
+    const closeReviewModalBtn = document.getElementById('closeReviewModalBtn');
+    const closeReviewModalBg = document.getElementById('closeReviewModalBg');
+
+    function openReviewModal() {
+        const targetModal = reviewModal || document.getElementById('reviewModal');
+        if (targetModal) {
+            targetModal.classList.add('active');
+            targetModal.setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    function closeReviewModal() {
+        const targetModal = reviewModal || document.getElementById('reviewModal');
+        if (targetModal) {
+            targetModal.classList.remove('active');
+            targetModal.setAttribute('aria-hidden', 'true');
+        }
+    }
+
+    // Expose globally for inline onclick handlers
+    window.openReviewModal = openReviewModal;
+    window.closeReviewModal = closeReviewModal;
+
+    openReviewModalBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openReviewModal();
+        });
+    });
+
+    if (closeReviewModalBtn) closeReviewModalBtn.addEventListener('click', closeReviewModal);
+    if (closeReviewModalBg) closeReviewModalBg.addEventListener('click', closeReviewModal);
+
+    // Close Modals on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeReservationModal();
+            closeCelebrationModal();
+            closeEventModal();
+            closeReviewModal();
+            if (typeof closeLightbox === 'function') closeLightbox();
+        }
+    });
 
     // 9. Form Submission Toast Feedback
     const toast = document.getElementById('toastNotification');
@@ -671,7 +793,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let text = el.getAttribute('data-cursor-text');
             if (!text) {
-                if (el.classList.contains('nav-link')) text = el.textContent.trim();
+                const href = el.getAttribute('href') || '';
+                if (href.startsWith('tel:')) text = 'CALL';
+                else if (href.includes('wa.me') || href.includes('whatsapp')) text = 'TAP TO CHAT';
+                else if (href.startsWith('mailto:')) text = 'MAIL TO IHA';
+                else if (el.classList.contains('nav-link')) text = el.textContent.trim();
                 else if (el.classList.contains('masonry-item') || el.classList.contains('gallery-card')) text = 'VIEW';
                 else if (el.classList.contains('signature-card')) text = 'TASTE';
                 else if (el.tagName === 'BUTTON') text = 'EXPLORE';
