@@ -1,147 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-    
-    <!-- Primary Landing Page -->
-    <url>
-        <loc>https://ihagroups.in/</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-        
-        <!-- Google Image SEO Extensions -->
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/logo.avif</image:loc>
-            <image:title>IHA Restaurant Brand Logo</image:title>
-            <image:caption>Official logo of IHA Restaurant Vallam</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/iha-restaurant-natural-hero.avif</image:loc>
-            <image:title>IHA Restaurant Dining Atmosphere</image:title>
-            <image:caption>Botanical dining and natural ambiance at IHA Restaurant</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/restaurant-interior-natural.avif</image:loc>
-            <image:title>IHA Restaurant Interior</image:title>
-            <image:caption>Warm nature-inspired indoor dining space</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/restaurant-garden-natural.avif</image:loc>
-            <image:title>IHA Restaurant Garden Dining</image:title>
-            <image:caption>Outdoor open garden seating with lush greenery</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/01_dragon_chicken.avif</image:loc>
-            <image:title>IHA Signature Dragon Chicken</image:title>
-            <image:caption>Crisp wok-tossed chicken with oriental glaze</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/04_grilled_chicken.avif</image:loc>
-            <image:title>IHA Flame-Grilled Chicken</image:title>
-            <image:caption>Live ember flame grilled chicken marinated with chef herbs</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/05_paneer_butter_masala.avif</image:loc>
-            <image:title>IHA Royal Paneer Butter Masala</image:title>
-            <image:caption>Rich cottage cheese in creamy spiced butter tomato gravy</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/06_shawarma.avif</image:loc>
-            <image:title>IHA Special Shawarma</image:title>
-            <image:caption>Slow roasted spiced meat wrapped in handcrafted pita</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/02_falooda.avif</image:loc>
-            <image:title>IHA Royal Falooda Dessert</image:title>
-            <image:caption>Artisan dessert with rose syrup, basil seeds, and ice cream</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/03_grill_cooking.avif</image:loc>
-            <image:title>IHA Live Grill Culinary Show</image:title>
-            <image:caption>Live open-fire tandoor and grill cooking in action</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/master-chef-01.jpg</image:loc>
-            <image:title>Executive Master Chef Rajsen Singh</image:title>
-            <image:caption>Culinary Director and wood-fire grill master at IHA Restaurant</image:caption>
-        </image:image>
-        <image:image>
-            <image:loc>https://ihagroups.in/assets/images/master-chef-02.jpg</image:loc>
-            <image:title>Senior Sous Chef Ajay Kumar</image:title>
-            <image:caption>Artisan chef and sauce specialist at IHA Restaurant</image:caption>
-        </image:image>
-    </url>
-
-    <!-- Home Section -->
-    <url>
-        <loc>https://ihagroups.in/#home</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Our Story Section -->
-    <url>
-        <loc>https://ihagroups.in/#our-story</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Master Chefs Section -->
-    <url>
-        <loc>https://ihagroups.in/#master-chefs</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Menu Section -->
-    <url>
-        <loc>https://ihagroups.in/#menu</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Experience & Spaces Section -->
-    <url>
-        <loc>https://ihagroups.in/#experience</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Photo Gallery Section -->
-    <url>
-        <loc>https://ihagroups.in/#gallery</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Celebrate & Private Events Section -->
-    <url>
-        <loc>https://ihagroups.in/#celebrate</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Table Reservation Section -->
-    <url>
-        <loc>https://ihagroups.in/#reservation</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Find Us / Contact & Location Section -->
-    <url>
-        <loc>https://ihagroups.in/#contact</loc>
-        <lastmod>2026-09-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  ── Homepage ───────────────────────────────────────────────────────────  -->
+<url>
+<loc>https://ihagroups.in/</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<!--  ── Restaurant sections (hash anchors — all on the SPA homepage) ─────────  -->
+<url>
+<loc>https://ihagroups.in/#home</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://ihagroups.in/#our-story</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://ihagroups.in/#master-chefs</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://ihagroups.in/#menu</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://ihagroups.in/#experience</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://ihagroups.in/#gallery</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://ihagroups.in/#celebrate</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://ihagroups.in/#reservation</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://ihagroups.in/#contact</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
+</url>
+<!--  ── AI-readable resources ───────────────────────────────────────────────  -->
+<url>
+<loc>https://ihagroups.in/llms.txt</loc>
+<lastmod>2026-09-26</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
 </urlset>
