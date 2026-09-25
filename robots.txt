@@ -1,5 +1,5 @@
 # robots.txt for IHA Restaurant
-# Website: https://iharestaurant.com/
+# Website: https://ihagroups.in/
 
 User-agent: *
 Allow: /
@@ -34,5 +34,5 @@ User-agent: Google-Extended
 Allow: /
 
 # XML Sitemap Location
-Sitemap: https://iharestaurant.com/sitemap.xml
-Host: https://iharestaurant.com
+Sitemap: https://ihagroups.in/sitemap.xml
+Host: https://ihagroups.in
