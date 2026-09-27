@@ -596,14 +596,15 @@ section[id] {
     font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.15em;
-    color: var(--text-secondary);
+    color: #ffffff;
     position: relative;
     padding: 4px 0;
+    transition: color var(--transition-fast);
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--text-primary);
+    color: var(--text-gold);
 }
 
 .nav-link::after {
@@ -631,6 +632,15 @@ section[id] {
 .nav-cta {
     padding: 10px 20px;
     font-size: 0.75rem;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.4);
+    transition: all var(--transition-fast);
+}
+
+.nav-cta:hover {
+    color: var(--text-gold);
+    border-color: var(--text-gold);
+    background: rgba(212, 175, 55, 0.12);
 }
 
 .hamburger {
@@ -652,7 +662,7 @@ section[id] {
 .hamburger span {
     width: 24px;
     height: 2px;
-    background-color: var(--text-primary);
+    background-color: #ffffff;
     transition: transform var(--transition-med), opacity var(--transition-med), background-color var(--transition-fast);
     border-radius: 2px;
     transform-origin: center;
