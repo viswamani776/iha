@@ -148,11 +148,16 @@ html {
 }
 
 body {
+    background-color: var(--bg-dark);
     overflow-x: hidden;
     width: 100%;
     max-width: 100%;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+}
+
+main {
+    background-color: var(--bg-dark);
 }
 
 /* Custom Scrollbar */
@@ -505,15 +510,19 @@ section[id] {
     left: 0;
     width: 100%;
     z-index: 1002;
-    padding: 20px 0;
-    transition: all var(--transition-med);
-    background: linear-gradient(180deg, rgba(13, 25, 15, 0.9) 0%, rgba(13, 25, 15, 0) 100%);
+    padding: 18px 0;
+    background: rgba(13, 25, 15, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color var(--transition-med), padding var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
 }
 
 .header.scrolled {
     padding: 12px 0;
-    background: rgba(13, 25, 15, 0.92);
-    backdrop-filter: blur(12px);
+    background: rgba(13, 25, 15, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border-subtle);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
@@ -713,6 +722,7 @@ section[id] {
     padding: 100px 24px 60px 24px;
     text-align: center;
     overflow: hidden;
+    background-color: var(--bg-dark);
 }
 
 .hero-bg {
