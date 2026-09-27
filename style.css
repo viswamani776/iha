@@ -510,11 +510,9 @@ section[id] {
     left: 0;
     width: 100%;
     z-index: 1002;
-    padding: 18px 0;
-    background: rgba(13, 25, 15, 0.85);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 0;
+    background: rgba(13, 25, 15, 0);
+    border-bottom: 1px solid transparent;
     transition: background-color var(--transition-med), padding var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
 }
 
@@ -523,7 +521,7 @@ section[id] {
     background: rgba(13, 25, 15, 0.96);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
